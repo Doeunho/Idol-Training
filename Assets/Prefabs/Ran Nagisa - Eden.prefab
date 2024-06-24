@@ -191,7 +191,7 @@ Transform:
   m_GameObject: {fileID: 7686886861560415220}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0155, y: -0.6674, z: 0.018}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -376,15 +376,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e7dab9818afa0e2489967967bd405868, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.63850003
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e7dab9818afa0e2489967967bd405868, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6674
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e7dab9818afa0e2489967967bd405868, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.27809998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e7dab9818afa0e2489967967bd405868, type: 3}
       propertyPath: m_LocalRotation.w
@@ -418,10 +418,30 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6814771128307698527, guid: e7dab9818afa0e2489967967bd405868, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be54f229201a47e4c8438572674e9f56, type: 2}
+    - target: {fileID: -6387719305934052420, guid: e7dab9818afa0e2489967967bd405868, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be54f229201a47e4c8438572674e9f56, type: 2}
     - target: {fileID: 919132149155446097, guid: e7dab9818afa0e2489967967bd405868, type: 3}
       propertyPath: m_Name
       value: Nagisa Body
       objectReference: {fileID: 0}
+    - target: {fileID: 4125845889426018048, guid: e7dab9818afa0e2489967967bd405868, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3cfb9d63fde002a48b85723b17561341, type: 2}
+    - target: {fileID: 4208374997907568525, guid: e7dab9818afa0e2489967967bd405868, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be54f229201a47e4c8438572674e9f56, type: 2}
+    - target: {fileID: 8623905249798446166, guid: e7dab9818afa0e2489967967bd405868, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be54f229201a47e4c8438572674e9f56, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -528,6 +548,14 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.00025615157
       objectReference: {fileID: 0}
+    - target: {fileID: -7354519641293502073, guid: fb2f3121772cda14aabf98234c22e873, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e6511a0884953a8418158174da2337ee, type: 2}
+    - target: {fileID: -7354519641293502073, guid: fb2f3121772cda14aabf98234c22e873, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e6511a0884953a8418158174da2337ee, type: 2}
     - target: {fileID: -5523261867264775570, guid: fb2f3121772cda14aabf98234c22e873, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -556,6 +584,18 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.00045702548
       objectReference: {fileID: 0}
+    - target: {fileID: -4391736433238688763, guid: fb2f3121772cda14aabf98234c22e873, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e6511a0884953a8418158174da2337ee, type: 2}
+    - target: {fileID: -4391736433238688763, guid: fb2f3121772cda14aabf98234c22e873, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e6511a0884953a8418158174da2337ee, type: 2}
+    - target: {fileID: -4391736433238688763, guid: fb2f3121772cda14aabf98234c22e873, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: e6511a0884953a8418158174da2337ee, type: 2}
     - target: {fileID: 919132149155446097, guid: fb2f3121772cda14aabf98234c22e873, type: 3}
       propertyPath: m_Name
       value: Nagisa Face
@@ -588,6 +628,10 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.00007440965
       objectReference: {fileID: 0}
+    - target: {fileID: 6043570242721091132, guid: fb2f3121772cda14aabf98234c22e873, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e6511a0884953a8418158174da2337ee, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
