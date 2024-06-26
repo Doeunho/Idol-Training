@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,15 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] GameObject UI_Announcement;
     [SerializeField] GameObject UI_Title;
+
+    [SerializeField] Text Text_Stratdata;
+    [SerializeField] Text Text_Enddata;
+
+    void Init()
+    {
+        
+    }
+
 
     private void Awake()
     {
@@ -25,6 +35,14 @@ public class UIManager : MonoBehaviour
         
     }
 
+    private void StampCardDate()
+    {
+        if (Text_Stratdata = null)
+            return;
+        //트레이닝이 끝나서 스탬프카드 UI가 활성화가 되는 동시에 날짜가 찍히게
+
+
+    }
 
 
     public void OnClick_OpenAnnouncement()
