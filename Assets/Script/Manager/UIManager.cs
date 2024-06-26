@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] Text Text_Stratdata;
     [SerializeField] Text Text_Enddata;
 
+    [SerializeField] GameObject Lobby;
+
     void Init()
     {
         
@@ -45,14 +47,15 @@ public class UIManager : MonoBehaviour
     }
 
 
-    public void OnClick_OpenAnnouncement()
+    public void OnClick_OpenLobby()
     {
-        UI_Announcement.SetActive(true);
+        //UI_Announcement.SetActive(true);
+        Lobby.SetActive(true);
     }
 
     public void OnClick_CloseAnnouncement()
     {
-        UI_Announcement.SetActive(false);
+        //UI_Announcement.SetActive(false);
     }
 
 }
