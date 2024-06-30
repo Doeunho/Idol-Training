@@ -11,15 +11,20 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject UI_Announcement;
     [SerializeField] GameObject UI_Title;
 
+    [Header("TEXT")]
     [SerializeField] Text Text_Stratdata;
     [SerializeField] Text Text_Enddata;
 
-    [SerializeField] GameObject Lobby;
+    [Header("BUTTON")]
+    [SerializeField] Button Btn_TrainingRoom;
+    [SerializeField] Button Btn_TrainingStr;
 
-    void Init()
-    {
-        
-    }
+
+    [Header("Main UI")]
+    [SerializeField] GameObject Lobby;
+    [SerializeField] GameObject Titel;
+    [SerializeField] GameObject TrainingRoom;
+    [SerializeField] GameObject GameRoom;
 
 
     private void Awake()
@@ -48,14 +53,13 @@ public class UIManager : MonoBehaviour
 
     public void OnClick_OpenLobby()
     {
-        //UI_Announcement.SetActive(true);
         Lobby.SetActive(true);
         AudioPlayer.instance.StopMusic();
     }
 
-    public void OnClick_CloseAnnouncement()
+    public void OnClick_OpenTraRoom()
     {
-        //UI_Announcement.SetActive(false);
+        TrainingRoom.SetActive(true);
     }
 
 }
