@@ -54,7 +54,7 @@ public class UIManager : MonoBehaviour
     public void OnClick_OpenLobby()
     {
         Lobby.SetActive(true);
-        AudioPlayer.instance.StopMusic();
+        //AudioPlayer.instance.StopMusic();
     }
 
     public void OnClick_OpenTraRoom()
