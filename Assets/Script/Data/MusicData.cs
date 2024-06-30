@@ -7,7 +7,7 @@ public class MusicData : ScriptableObject
 {
     public AudioClip Music;
     public Sprite Img_MusicImg;
-    public Text Text_MusicName;
+    public string Text_MusicName;
 
     void Start()
     {
