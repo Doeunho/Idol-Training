@@ -5,27 +5,28 @@ using UnityEngine.UI;
 
 public class AudioPlayer : MonoBehaviour
 {
-    public static AudioPlayer instance;
-
     [SerializeField] Button Btn_MusicPlay;
-    [SerializeField] AudioSource Audio_Source;
+    public AudioSource Audio_Source;
 
     [SerializeField] float fadeDuration = 1.0f;
 
-    private void Awake()
-    {
-        instance = this;
-    }
+    [SerializeField] MusicData MusicData;
+    public string MusicName;
+
+    Image Musicicon;
+
+
+
 
     public void PlayAndFadeOut()
     {
         StartCoroutine(PlayAndFadeOutCoroutine());
     }
 
-    private IEnumerator PlayAndFadeOutCoroutine()
+    public IEnumerator PlayAndFadeOutCoroutine()
     {
         Audio_Source.Play();
-        yield return new WaitForSeconds(25.0f); // 5초 재생
+        yield return new WaitForSeconds(25.0f); // 25초 재생
 
         float startVolume = Audio_Source.volume;
 
@@ -38,6 +39,8 @@ public class AudioPlayer : MonoBehaviour
         Audio_Source.Stop();
         Audio_Source.volume = startVolume;
     }
+
+
 
     /*
         public void OnClick_PlayAudio()

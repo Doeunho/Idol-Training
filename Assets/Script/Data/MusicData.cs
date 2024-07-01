@@ -5,18 +5,11 @@ using UnityEngine.UI;
 [CreateAssetMenu(menuName = "MusicData")]
 public class MusicData : ScriptableObject
 {
+    public enum MusicName { WaitforYou, PixelWorld, Why, SixSummer, Loveme }
+
+    public MusicName musicName;
     public AudioClip Music;
     public Sprite Img_MusicImg;
     public string Text_MusicName;
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int Musicid;
 }

@@ -5,16 +5,4 @@ using UnityEngine;
 public class CharacterData : ScriptableObject
 {
     public Sprite Spt_CharacterSprite;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
