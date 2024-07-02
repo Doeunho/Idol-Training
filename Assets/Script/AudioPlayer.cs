@@ -40,22 +40,4 @@ public class AudioPlayer : MonoBehaviour
         Audio_Source.volume = startVolume;
     }
 
-
-
-    /*
-        public void OnClick_PlayAudio()
-    {
-        if(Audio_Source != null)
-        {
-            Audio_Source.gameObject.SetActive(true);
-            Audio_Source.Play();
-        }
-    }
-
-    public void StopMusic()
-    {
-        Audio_Source.Stop();
-    }
-    */
-
 }

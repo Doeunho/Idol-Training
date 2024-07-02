@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class MainPlayerAnimation : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //메인 캐릭터 애니메이션 (운동, 움직임)
+    //컨트롤러는 동일한거 사용, 캐릭터 프리펩만 다르게
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
