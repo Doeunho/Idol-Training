@@ -15,9 +15,6 @@ public class AudioPlayer : MonoBehaviour
 
     Image Musicicon;
 
-
-
-
     public void PlayAndFadeOut()
     {
         StartCoroutine(PlayAndFadeOutCoroutine());
