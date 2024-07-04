@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a015cbe06ad63e40c244039ac2873f, type: 3}
+  m_Name: Entraining
+  m_EditorClassIdentifier:
+  characterName: Mao
+  costumeName: Entraining
+  materialEntries:
+  - materialName: Mat_Skin
+    textureEntries:
+    - propertyName: _MainTex
+      texture: {fileID: 2800000, guid: 311f941c322547940ac3a45f13c6b7f2, type: 3}
+    - propertyName: _MRSTexture
+      texture: {fileID: 2800000, guid: c9770c3aafe11c945a081e233a418070, type: 3}
+    - propertyName: _ShadowColorMap
+      texture: {fileID: 2800000, guid: 44387be7b890f7c4fbcb92d24ebdb186, type: 3}

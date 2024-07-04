@@ -1,0 +1,113 @@
+[Identifier]
+FlightUnit/EnStars
+
+[PostSetupFunctions]
+FUnit.EnStarsSetupCharaMaterial	SetupProjectMaterialSettings
+
+[ShaderBase]
+# シェーダールート名	シェーダータグ
+FlightUnit/EnStars/Eye	eye
+FlightUnit/EnStars/Face	face	fcl	tooth
+FlightUnit/EnStars/Hair	hair
+FlightUnit/EnStars/Dev/Sparkle1	sparkle
+FlightUnit/EnStars/Default
+
+[ShaderSuffixes]
+_Outline
+
+[ShaderRemoveSuffixes]
+_Outline	_NO	_BLEND
+
+[PropertyMap]
+# 元のマテリアルのプロパティからUnity用シェーダーへのプロパティマップ
+# メインテクスチャはUnityだと_MainTexになっているというのが多いので、
+# 主にそのため
+color	_MainTex
+DiffuseTexture	_MainTex
+ReflectionTexture	_ReflectionMaskTexture
+g_bDoubleToonEnable	_EnableDoubleToon
+g_bConstantMaskEnable	_EnableConstantMask
+g_bNormalMapEnable	_EnableNormalMap
+g_bSpecularEnable	_EnableSpecularMap
+g_bDoubleSided	_EnableBackfacePass
+g_bReflectionEnable	_EnableReflectionMap
+g_bOutlineEnable	_EnableOutline
+texDiffuseSampler_PupWH	DiffuseSampler_PupWH
+texDiffuseSampler_Pup	DiffuseSampler_Pup
+texSpecularSampler_Pup	SpecularSampler_Pup
+texDiffuseSampler_PupHI	DiffuseSampler_PupHI
+
+[DefaultTextures]
+_ToonTexture	Default_Toon
+_RimTexture	Default_ColorRim
+_EnvironmentTexture	Default_Env
+_OutlinePattern	Default_Outline
+_SpecularTexture	Black
+_MaskTexture	Black
+_RimLightMaskTexture	White
+_NormalMapTexture	Default_Normal
+_ShadowColorMap Black
+_ReflectionMaskTexture	Black
+SpecularSampler_Pup	Black
+
+[DefaultProperties]
+_EnableDropShadow	1
+_CastOffsetShadow	0
+_ReceiveOffsetShadow	0
+_MultiplyToonGradationColor	0
+_Culling	2
+_SrcBlend	1
+_DstBlend	0
+_EnableAlphaTest	0
+_ZWrite	1
+
+[TokenProperties]
+_ds	_Culling	0
+_a	_EnableAlphaClip	1	renderQueue	2200
+_blend	_SrcBlend	5	_DstBlend	10	renderQueue	2300
+_e	_EnableEmissive	1
+face	_EnableConstantMask	1	_EnableNormalMap	1	_EnableDoubleToon	0	_PlanarNormalSmoothing	1	_MultiplyToonGradationColor 1	_ReceiveOffsetShadow	1	_EnableVertexColorScale	1	_EnableDropShadow	0
+tooth	_EnableConstantMask	1	_EnableNormalMap	1	_EnableDoubleToon	0	_PlanarNormalSmoothing	1	_MultiplyToonGradationColor 1	_ReceiveOffsetShadow	1	_EnableVertexColorScale	1	_EnableDropShadow	0	_EnableAlphaClip	1	renderQueue	2200
+_fcl	_EnableConstantMask	1	_EnableNormalMap	1	_EnableDoubleToon	0	_PlanarNormalSmoothing	1	_MultiplyToonGradationColor 1	_ReceiveOffsetShadow	1	_EnableVertexColorScale	1	_EnableDropShadow	0
+skin	_MultiplyToonGradationColor 1
+hair	_EnableGradationMap	0	_CastOffsetShadow	1	_EnableReflectionMap	0	renderQueue	2250
+
+[TokenTextures]
+face	_ToonTexture	Default_ColorToonSkin
+face	_NormalMapTexture	Black
+_fcl	_ToonTexture	Default_ColorToonSkin
+_fcl	_NormalMapTexture	Black
+tooth	_ToonTexture	Default_ColorToonSkin
+tooth	_NormalMapTexture	Black
+skin	_ToonTexture	Default_ColorToonSkin
+skin	_NormalMapTexture	Default_Normal
+hair	_ToonTexture	Default_ToonHair
+
+[TextureSuffixes]
+_ShadowColorMap	_sdw	_Shadow
+_MaskTexture	_Mask	_Constant
+_NormalMapTexture	_Normal	_Average	_CA
+_SpecularTexture	_Specular
+_ReflectionMaskTexture	_Reflection
+_OcclusionTexture	_Occlusion
+_MRSTexture	_MRS	_MS
+_CATexture	_CA	_CA
+_RimLightMaskTexture	_RimMask
+_SparkleBumpMap	_SP
+
+[TextureFlags]
+_ShadowColorMap	_EnableShadowColorMap
+_MaskTexture	_EnableDoubleToon
+_NormalMapTexture	_EnableNormalMap
+_SpecularTexture	_EnableSpecularMap
+SpecularSampler_Pup	_EnableSpecularMap
+_ReflectionMaskTexture	_EnableReflectionMap
+_OcclusionTexture	_EnableOcclusionMap
+_CATexture	_EnableCAMask
+_CATexture	_EnableConstantMask
+_CATexture	_EnableNormalMap
+_MRSTexture	_EnableMRSMask
+_MRSTexture	_EnableDoubleToon
+_MRSTexture	_EnableSpecularMap
+_MRSTexture	_EnableReflectionMap
+_RimLightMaskTexture	_EnableRimLightMask

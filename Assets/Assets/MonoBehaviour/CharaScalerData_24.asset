@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f21a78b6127b5b162a8c36c0d36c019e, type: 3}
+  m_Name: CharaScalerData
+  m_EditorClassIdentifier:
+  positionJointName: Hips
+  scaleEntries:
+  - name: H_3_LookGrp
+    localScale: {x: 10, y: 10, z: 10}
+  - name: Reference
+    localScale: {x: 0.985, y: 0.985, z: 0.985}
+  - name: Head
+    localScale: {x: 1.045, y: 1.045, z: 1.045}

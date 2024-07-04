@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a015cbe06ad63e40c244039ac2873f, type: 3}
+  m_Name: ETAP
+  m_EditorClassIdentifier:
+  characterName: Souma
+  costumeName: ETAP
+  materialEntries:
+  - materialName: Mat_Acc_DS
+    textureEntries:
+    - propertyName: _MainTex
+      texture: {fileID: 2800000, guid: 3845657a17231d54897b7ab8a2f59583, type: 3}
+    - propertyName: _MRSTexture
+      texture: {fileID: 2800000, guid: df405578078d7b5418d6b6f6ff59add7, type: 3}
+    - propertyName: _ShadowColorMap
+      texture: {fileID: 2800000, guid: e776efe30f10f774ca574b783bb274ef, type: 3}
+  - materialName: Mat_Body
+    textureEntries:
+    - propertyName: _MainTex
+      texture: {fileID: 2800000, guid: c91485ce9f21de24f8468f4c98e55862, type: 3}
+    - propertyName: _MRSTexture
+      texture: {fileID: 2800000, guid: ee834ed5a915bfc4d80ec6fa70844a23, type: 3}
+    - propertyName: _ShadowColorMap
+      texture: {fileID: 2800000, guid: 2d8826daa9c785e47be0d18f109f6372, type: 3}
+  - materialName: Mat_Body_DS
+    textureEntries:
+    - propertyName: _MainTex
+      texture: {fileID: 2800000, guid: c91485ce9f21de24f8468f4c98e55862, type: 3}
+    - propertyName: _MRSTexture
+      texture: {fileID: 2800000, guid: ee834ed5a915bfc4d80ec6fa70844a23, type: 3}
+    - propertyName: _ShadowColorMap
+      texture: {fileID: 2800000, guid: 2d8826daa9c785e47be0d18f109f6372, type: 3}
+  - materialName: Mat_Body_DS_A
+    textureEntries:
+    - propertyName: _MainTex
+      texture: {fileID: 2800000, guid: c91485ce9f21de24f8468f4c98e55862, type: 3}
+    - propertyName: _MRSTexture
+      texture: {fileID: 2800000, guid: ee834ed5a915bfc4d80ec6fa70844a23, type: 3}
+    - propertyName: _ShadowColorMap
+      texture: {fileID: 2800000, guid: 2d8826daa9c785e47be0d18f109f6372, type: 3}
+  - materialName: Mat_Body_NO
+    textureEntries:
+    - propertyName: _MainTex
+      texture: {fileID: 2800000, guid: c91485ce9f21de24f8468f4c98e55862, type: 3}
+    - propertyName: _MRSTexture
+      texture: {fileID: 2800000, guid: ee834ed5a915bfc4d80ec6fa70844a23, type: 3}
+    - propertyName: _ShadowColorMap
+      texture: {fileID: 2800000, guid: 2d8826daa9c785e47be0d18f109f6372, type: 3}
+  - materialName: Mat_Hair_DS
+    textureEntries:
+    - propertyName: _MainTex
+      texture: {fileID: 2800000, guid: b1cc4922c585dda4f8a21269b10b17f1, type: 3}
+    - propertyName: _MRSTexture
+      texture: {fileID: 2800000, guid: f50ce35a335ff6e409abfbe4be7e831f, type: 3}
+    - propertyName: _ShadowColorMap
+      texture: {fileID: 2800000, guid: 86ace3761d67a714e85e1f38c83ebde4, type: 3}
+  - materialName: Mat_Skin
+    textureEntries:
+    - propertyName: _MainTex
+      texture: {fileID: 2800000, guid: a061529dc57a9894ab490147e30965e3, type: 3}
+    - propertyName: _MRSTexture
+      texture: {fileID: 2800000, guid: ccdb6f01d229ac64c8957e30b96b5c32, type: 3}
+    - propertyName: _ShadowColorMap
+      texture: {fileID: 2800000, guid: 4ab902930444ed344932c7b7661b618b, type: 3}
+  meshSet:
+    meshEntries: []

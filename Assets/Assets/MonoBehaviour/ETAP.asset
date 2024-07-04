@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a015cbe06ad63e40c244039ac2873f, type: 3}
+  m_Name: ETAP
+  m_EditorClassIdentifier:
+  characterName: Wataru
+  costumeName: ETAP
+  materialEntries:
+  - materialName: Mat_Body
+    textureEntries:
+    - propertyName: _MainTex
+      texture: {fileID: 2800000, guid: ccb85e53217b85e4f985b45952ca3585, type: 3}
+    - propertyName: _MRSTexture
+      texture: {fileID: 2800000, guid: 25ee59536b474a447a88d1347478984d, type: 3}
+    - propertyName: _ShadowColorMap
+      texture: {fileID: 2800000, guid: 08724cd98fd0fa848a9f20b4124e87c0, type: 3}
+  - materialName: Mat_Body_DS
+    textureEntries:
+    - propertyName: _MainTex
+      texture: {fileID: 2800000, guid: ccb85e53217b85e4f985b45952ca3585, type: 3}
+    - propertyName: _MRSTexture
+      texture: {fileID: 2800000, guid: 25ee59536b474a447a88d1347478984d, type: 3}
+    - propertyName: _ShadowColorMap
+      texture: {fileID: 2800000, guid: 08724cd98fd0fa848a9f20b4124e87c0, type: 3}
+  - materialName: Mat_Body_DS_A
+    textureEntries:
+    - propertyName: _MainTex
+      texture: {fileID: 2800000, guid: ccb85e53217b85e4f985b45952ca3585, type: 3}
+    - propertyName: _MRSTexture
+      texture: {fileID: 2800000, guid: 25ee59536b474a447a88d1347478984d, type: 3}
+    - propertyName: _ShadowColorMap
+      texture: {fileID: 2800000, guid: 08724cd98fd0fa848a9f20b4124e87c0, type: 3}
+  - materialName: Mat_Body_NO
+    textureEntries:
+    - propertyName: _MainTex
+      texture: {fileID: 2800000, guid: ccb85e53217b85e4f985b45952ca3585, type: 3}
+    - propertyName: _MRSTexture
+      texture: {fileID: 2800000, guid: 25ee59536b474a447a88d1347478984d, type: 3}
+    - propertyName: _ShadowColorMap
+      texture: {fileID: 2800000, guid: 08724cd98fd0fa848a9f20b4124e87c0, type: 3}
+  - materialName: Mat_Skin
+    textureEntries:
+    - propertyName: _MainTex
+      texture: {fileID: 2800000, guid: 48845a0b811c25e4d8db55171179ffdf, type: 3}
+    - propertyName: _MRSTexture
+      texture: {fileID: 2800000, guid: c5fb8d98a2e99ec45a9c9e311c47dae9, type: 3}
+    - propertyName: _ShadowColorMap
+      texture: {fileID: 2800000, guid: cefaa5c3c6a394e4da22e87724338975, type: 3}

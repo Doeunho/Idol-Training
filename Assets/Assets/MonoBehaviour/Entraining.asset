@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a015cbe06ad63e40c244039ac2873f, type: 3}
+  m_Name: Entraining
+  m_EditorClassIdentifier:
+  characterName: Yuta
+  costumeName: Entraining
+  materialEntries:
+  - materialName: Mat_Skin
+    textureEntries:
+    - propertyName: _MainTex
+      texture: {fileID: 2800000, guid: ba0c1775520c8014eaf8f11fc261cc6f, type: 3}
+    - propertyName: _MRSTexture
+      texture: {fileID: 2800000, guid: f3acd626751ef294baca7a4cce80150c, type: 3}
+    - propertyName: _ShadowColorMap
+      texture: {fileID: 2800000, guid: 87c0cef12d2931e44875d5281b2184e1, type: 3}

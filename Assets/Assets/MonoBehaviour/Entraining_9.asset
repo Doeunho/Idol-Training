@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a015cbe06ad63e40c244039ac2873f, type: 3}
+  m_Name: Entraining
+  m_EditorClassIdentifier:
+  characterName: Madara
+  costumeName: Entraining
+  materialEntries:
+  - materialName: Mat_Skin
+    textureEntries:
+    - propertyName: _MainTex
+      texture: {fileID: 2800000, guid: c811b4f790453904ba3b6b4da0012915, type: 3}
+    - propertyName: _MRSTexture
+      texture: {fileID: 2800000, guid: e5a6dbacdddb79d40b90efb8fc98f597, type: 3}
+    - propertyName: _ShadowColorMap
+      texture: {fileID: 2800000, guid: 85135bc7963f018418988446aa474930, type: 3}
