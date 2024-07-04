@@ -16559,6 +16559,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kiryu Kuro - Akatsuki
       objectReference: {fileID: 0}
+    - target: {fileID: 7401344111924007189, guid: 32197142bed95d44aa34e072c0e93716, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'Hips'\n\tTransform 'Spine3'\n\tTransform
+        'RightHandRing1'\n\tTransform 'RightHandMiddle'\n\tTransform 'RightForeArm'\n\tTransform
+        'RightHandPinky'\n\tTransform 'RightHandThumb1'\n\tTransform 'Spine1'\n\tTransform
+        'RightLeg'\n\tTransform 'RightHandIndex'\n\tand more ...\n\tFrom animation
+        clip 'Stretch002'"
+      objectReference: {fileID: 0}
     - target: {fileID: 7972587010908849772, guid: 32197142bed95d44aa34e072c0e93716, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.5230746

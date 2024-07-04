@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Mat_Face
+  m_Shader: {fileID: 4800000, guid: f85608546c37ce64aaddefa3f32bf2f5, type: 3}
+  m_ShaderKeywords: ENABLE_NORMAL_MAP ENABLE_RECEIVE_OFFSET_SHADOW ENABLE_RIM_LIGHT ENABLE_RIM_LIGHT_MASK ENABLE_SHADOW_COLOR_MAP ENABLE_VERTEX_COLOR_SCALE
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _BlushMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _DepthOffsetMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _EnvironmentTexture:
+        m_Texture: {fileID: 2800000, guid: 0d41562719a955b4eb9655d65c146245, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _LineTexture:
+        m_Texture: {fileID: 2800000, guid: ec8c567a7d087d64e92baf25e1d454fc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _MainTex:
+        m_Texture: {fileID: 2800000, guid: 17e38ce3ef2d2284b865d0347a06fc23, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _NormalMapTexture:
+        m_Texture: {fileID: 2800000, guid: daf520b300d38114883faedb6a7251df, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _OffsetShadowMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _OutlinePattern:
+        m_Texture: {fileID: 2800000, guid: 0d03e4843795d3b4dab175251f734009, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _ReflectionMaskTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _RimLightMaskTexture:
+        m_Texture: {fileID: 2800000, guid: 56cc90551be8bb94b95de1c8d432bc2b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _ShadowColorMap:
+        m_Texture: {fileID: 2800000, guid: 0bd664e45225d6f47bbf3fe1d0692f42, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _SpecularTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _BlushIntensity: 0
+      _BumpScale: 1
+      _CastOffsetShadow: 0
+      _CharaLineDisable: 0
+      _CharaLineDisableLeftSide: 0
+      _CharaLineDisableRightSide: 0
+      _CheekOpacity: 0
+      _Culling: 2
+      _Cutoff: 0.5
+      _DarkToonCutoff: 0.8
+      _DarkToonRange: 0.05
+      _DepthOffset: 0
+      _DetailNormalMapScale: 1
+      _DstBlend: 0
+      _EnableAlphaClip: 0
+      _EnableDepthOffset: 0
+      _EnableDropShadow: 0
+      _EnableEmissive: 0
+      _EnableNormalMap: 1
+      _EnableOcclusionMap: 0
+      _EnableOpacityMap: 0
+      _EnableReflectionMap: 0
+      _EnableRimLight: 1
+      _EnableRimLightMask: 1
+      _EnableShadowColorMap: 1
+      _EnableSpecularMap: 0
+      _EnableVertexColorScale: 1
+      _EnvironmentExponent: 1
+      _EnvironmentIntensity: 1
+      _GlossMapScale: 1
+      _Glossiness: 0
+      _GlossyReflections: 1
+      _KeyLightInfluence: 1
+      _LightToonCutoff: 0.5
+      _LightToonRange: 0.05
+      _LineAlpha: 0.5
+      _LineAngleLimit: 0.46
+      _LineDepthOffset: 0.07
+      _LineDstBlend: 10
+      _LineSrcBlend: 2
+      _MaterialId: 0
+      _Metallic: 0
+      _Mode: 0
+      _OcclusionStrength: 1
+      _OpacityMultiplier: 1
+      _OutlineBoost: 0
+      _OutlineDepthBias: 0
+      _Parallax: 0.02
+      _ReceiveOffsetShadow: 1
+      _RimLightCutoff: 0.7
+      _RimLightDarkCutoff: 0.85
+      _RimLightDarkRange: 0.03
+      _RimLightRange: 0.03
+      _SmoothnessTextureChannel: 0
+      _SpecularHighlights: 1
+      _SpecularIgnoreAngle: 0
+      _SpecularIntensity: 1
+      _SpecularPower: 10
+      _SrcBlend: 1
+      _UVSec: 0
+      _UseRimGradation: 0
+      _UseToonGradation: 0
+      _ZWrite: 1
+    m_Colors:
+      _CheekColor: {r: 1, g: 0.65, b: 0.5, a: 1}
+      _Color: {r: 1, g: 1, b: 1, a: 1}
+      _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
+      _NormalSphereCenter: {r: 0, g: 0, b: 0, a: 0}
+      _OffsetShadowCoordinates: {r: 0.015, g: 0.01, b: 0, a: 0}
+      _OutlineColor: {r: 0.39999998, g: 0.19999996, b: 0.19999996, a: 1}
+      _OutlineEffectColor: {r: 1, g: 1, b: 1, a: 0}
+      _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+      _ToonColor: {r: 0.9689999, g: 0.898, b: 0.831, a: 1}
+  m_BuildTextureStacks: []

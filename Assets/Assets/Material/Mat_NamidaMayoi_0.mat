@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Mat_NamidaMayoi
+  m_Shader: {fileID: 4800000, guid: 6ccdb4ab947ec1a418a69611a3c80315, type: 3}
+  m_ShaderKeywords: _DROP_OR_PUDDLE_ON _MIRROR_X_ON _STOP_NOISE_ON
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _MatcapTex:
+        m_Texture: {fileID: 2800000, guid: cedbfe82ca6e825479c0c10afb317f17, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _NamidaDrop_Base_Tex:
+        m_Texture: {fileID: 2800000, guid: cd9de30337949284baf0cecbe2e74d38, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _NamidaDrop_Base_Tex_Normal:
+        m_Texture: {fileID: 2800000, guid: 826b28902c9be274eb87d9b4eb9bc8a4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _Namida_Base_Tex:
+        m_Texture: {fileID: 2800000, guid: 69125443a2069814386938636ee6585e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _Namida_Base_Tex_Normal:
+        m_Texture: {fileID: 2800000, guid: 0afb5efc6deb305419162695c8e857d0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _Animate: 0
+      _Cubemap_Scale: 1.89
+      _Drop_Noise_OffsetX: 0
+      _Drop_Noise_OffsetY: 0
+      _Drop_Noise_Power: 0.84
+      _Drop_Noise_Scale: 6.5
+      _Drop_Noise_X: -1
+      _Drop_Noise_Y: -0.468
+      _Drop_Nomal_Scale: 1
+      _Drop_Offset_X: -2.24
+      _Drop_Offset_Y: 0.21
+      _Drop_Opacity: 0.999
+      _Drop_Rotate: 0
+      _Drop_Shake: 0.5
+      _Drop_Size_X: 0.1
+      _Drop_Size_Y: 0.053
+      _Drop_Slide: 0.9986
+      _Drop_Stop_Noise: 0
+      _Drop_Tilling_X: 13.42
+      _Drop_Tilling_Y: 2.86
+      _Keyword0: 0
+      _LiveGraborRefrection: 0
+      _Matcap_Bias: 1
+      _Mirror_X: 1
+      _Noise_Power: 0.995
+      _Noise_Scale: 14.8
+      _Noise_Speed: 0
+      _Noise_X: -0.646
+      _Noise_Y: 0.647
+      _Nomal_Scale: 0.278
+      _Normal_Strange: 0.69
+      _Offset_X: -7.49
+      _Offset_X1: 0.25
+      _Offset_Y: 0.47
+      _Offset_Y1: 0.25
+      _Puddle_Noise_Power: 0.9609
+      _Puddle_Noise_Scale: 27.9
+      _Puddle_Noise_Speed: 0.293
+      _Puddle_Noise_X: -1
+      _Puddle_Noise_X_Speed: 0
+      _Puddle_Noise_Y: 0.4267567
+      _Puddle_Noise_Y_Speed: 1
+      _Puddle_Nomal_Scale: 1
+      _Puddle_Offset_X: -1.53
+      _Puddle_Offset_Y: 1.02
+      _Puddle_Opacity: 0.999
+      _Puddle_Rotate: -0.06
+      _Puddle_Size_X: 0.0689
+      _Puddle_Size_Y: 0.186
+      _Puddle_Tilling_X: 9.91
+      _Puddle_Tilling_Y: 22.09
+      _Refrection_Constant_Bias: 0.09
+      _Refrection_Constant_Scale: 4.78
+      _Refrection_Strange: 0.21
+      _Tilling_X: 11.34
+      _Tilling_Y: 0.9
+      _UV_Wiggler: 1
+      __dirty: 0
+    m_Colors:
+      _Color: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
+  m_BuildTextureStacks: []

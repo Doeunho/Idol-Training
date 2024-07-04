@@ -63,7 +63,6 @@
     <Compile Include="Assets\Animator\Yoga_MoCap_02\DemoScene\yoga_mocap_02_follow_player.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
-    <Compile Include="Assets\Primer\Script\BaseMirrorBlock.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
@@ -71,7 +70,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
-    <Compile Include="Assets\Primer\Script\BaseMirrorCamera.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
@@ -79,7 +77,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Script\Manager\UIManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
-    <Compile Include="Assets\Primer\Script\MainCameraAction.cs" />
     <Compile Include="Assets\Script\StampDate.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Script\Music.cs" />
@@ -96,7 +93,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Script\Data\CharacterData.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
-    <Compile Include="Assets\Primer\Script\BaseMirrorMap.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
@@ -111,36 +107,143 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_57.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Dev_Sparkle1_Outline.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Default_Stencil_Outline.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_36.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_3.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_5.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_60.shader" />
     <None Include="Assets\Animations\Tower Unite Emotes\About.txt" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_44.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_48.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_OffsetShadowMapCaster.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_24.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_OffsetShadowMap.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_GlassShader2.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_50.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_54.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_42.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
-    <None Include="Assets\Primer\Shader\SHDBaseMirrorBlock.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Default_Outline.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_47.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Holograph_Outline.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_25.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_55.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Eye_Line.shader" />
     <None Include="Assets\Animator\Yoga_MoCap_02\Yoga MoCap 02 Description.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_10.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_40.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_45.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_18.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Face_Line.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_ShadowMap.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_62.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_TexScroll.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_26.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\BlurShader.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_14.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_49.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_11.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_23.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_22.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Default_DS_2Pass.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_29.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_28.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_59.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_65.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_53.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Translucency.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_32.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_NewReflection.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_31.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Face_Outline.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Face.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_7.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_2.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_GlassShader2_0.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_67.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_13.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_GlowPulse.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_39.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Spangle.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Default_Stencil.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Face_Stencil_Outline.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_GlowPulse_DS.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Default_DS_2Texture.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Default.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Face_Line_Outline.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_68.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Veil_DS_2Pass.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Hair_Outline.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\Primer\Shader\SHDBaseMirrorMask.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_27.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Hair.shader" />
+    <None Include="Assets\Assets\TextAsset\ShaderProperties.txt" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_63.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_33.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_41.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_61.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Dev_Sparkle1.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Spangle_Outline.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_4.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_51.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Fur2.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_20.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_34.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Eye.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_52.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_43.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_0.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_1.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_66.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_56.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_16.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_46.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_12.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Fur.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_8.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_6.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_15.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Face_Stencil.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_35.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_17.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_OffsetShadowMapReceiver.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Jewel.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Veil.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_21.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\Primer\ReadMe.txt" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_Holograph.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_64.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_30.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_37.shader" />
+    <None Include="Assets\Assets\Shader\FlightUnit_EnStars_NewReflection_Outline.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_19.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_58.shader" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_9.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
+    <None Include="Assets\Assets\Shader\Yamamoto_NamidaShader_Drop_38.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -1121,6 +1224,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="FUnit.csproj">
+      <Project>{BA81DB2A-7142-21CF-25DC-5F8D7DA0146B}</Project>
+      <Name>FUnit</Name>
+    </ProjectReference>
+    <ProjectReference Include="BOYS2.Live.csproj">
+      <Project>{9C241975-5833-588C-42EF-2C014E76CD70}</Project>
+      <Name>BOYS2.Live</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

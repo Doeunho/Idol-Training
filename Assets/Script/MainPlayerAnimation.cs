@@ -9,6 +9,8 @@ public class MainPlayerAnimation : MonoBehaviour
 
     Animator ani;
 
+
+
     public void GameStart(int id)
     {
 
