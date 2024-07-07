@@ -8,7 +8,10 @@ public class ActivateBlendList : MonoBehaviour
 {
     public CinemachineBlendListCamera blendListCamera; // Blend List Camera 참조
     public Button activateButton;                      // 버튼 참조
-    public Animator characterAnimator;                 // 캐릭터의 Animator
+    public Animator Mao_characterAnimator;                 // 캐릭터의 Animator
+    public Animator Makoto_characterAnimator;                 // 캐릭터의 Animator
+    public Animator Hokuto_characterAnimator;                 // 캐릭터의 Animator
+
     public string animationTrigger;                    // 재생할 애니메이션 트리거 이름
 
     public float delay;
@@ -48,7 +51,7 @@ public class ActivateBlendList : MonoBehaviour
         targetObject.SetActive(true);
     }
 
-    public void ActivateCameraAndAnimation()
+    public void MaoActivateCameraAndAnimation()
     {
         // Blend List Camera 활성화
         if (blendListCamera != null)
@@ -58,9 +61,41 @@ public class ActivateBlendList : MonoBehaviour
         }
 
         // 애니메이션 트리거 설정하여 애니메이션 재생
-        if (characterAnimator != null && !string.IsNullOrEmpty(animationTrigger))
+        if (Mao_characterAnimator != null && !string.IsNullOrEmpty(animationTrigger))
         {
-            characterAnimator.SetTrigger(animationTrigger);
+            Mao_characterAnimator.SetTrigger(animationTrigger);
+        }
+    }
+
+    public void MakotoActivateCameraAndAnimation()
+    {
+        // Blend List Camera 활성화
+        if (blendListCamera != null)
+        {
+            blendListCamera.Priority = 10; // 우선 순위 높여서 활성화
+
+        }
+
+        // 애니메이션 트리거 설정하여 애니메이션 재생
+        if (Makoto_characterAnimator != null && !string.IsNullOrEmpty(animationTrigger))
+        {
+            Makoto_characterAnimator.SetTrigger(animationTrigger);
+        }
+    }
+
+    public void HokutoActivateCameraAndAnimation()
+    {
+        // Blend List Camera 활성화
+        if (blendListCamera != null)
+        {
+            blendListCamera.Priority = 10; // 우선 순위 높여서 활성화
+
+        }
+
+        // 애니메이션 트리거 설정하여 애니메이션 재생
+        if (Hokuto_characterAnimator != null && !string.IsNullOrEmpty(animationTrigger))
+        {
+            Hokuto_characterAnimator.SetTrigger(animationTrigger);
         }
     }
 }
