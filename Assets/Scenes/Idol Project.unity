@@ -320,9 +320,9 @@ RectTransform:
   - {fileID: 570816366}
   m_Father: {fileID: 428802322}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1367.22, y: -280.7}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 787.3, y: 561.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5856250
@@ -1174,7 +1174,6 @@ GameObject:
   m_Component:
   - component: {fileID: 27313294}
   - component: {fileID: 27313293}
-  - component: {fileID: 27313292}
   m_Layer: 0
   m_Name: ConversationLodingCamera
   m_TagString: Untagged
@@ -1182,14 +1181,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &27313292
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 27313291}
-  m_Enabled: 1
 --- !u!20 &27313293
 Camera:
   m_ObjectHideFlags: 0
@@ -9114,7 +9105,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 2207, y: 0}
-  m_SizeDelta: {x: 4473.58, y: 561.4}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &428802323
 MonoBehaviour:
@@ -11411,6 +11402,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ButtonClickAudio, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &510095937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12520,7 +12523,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &570988315
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15538,7 +15541,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1a2aa0d35b2298341831de0c6f9582e6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.546
+  m_Volume: 0.271
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -16588,6 +16591,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ButtonClickAudio, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &842750339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16864,6 +16879,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ButtonClickAudio, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -20916,9 +20943,9 @@ RectTransform:
   - {fileID: 1378423024}
   m_Father: {fileID: 428802322}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 3092.3599, y: -280.7}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 787.3, y: 561.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1059116184
@@ -22207,6 +22234,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 9795ffbbf9452304982a81cb847d8d38, type: 2}
+        m_TargetAssemblyTypeName: ButtonClickAudio, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1125359773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22544,7 +22583,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: efd5ac1cb10f6934093f8f229c41f0b7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.32
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -27357,6 +27396,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45aece6800837ed42a47674da03672c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ConversationTrainingEndRoot1: {fileID: 257823928}
+  ConversationTrainingEndRoot2: {fileID: 1011605813}
+  ConversationTrainingEndRoot3: {fileID: 370381170}
+  ConversationTrainingEndRoot4: {fileID: 1706068981}
+  ConversationTrainingEndRoot5: {fileID: 1916194585}
   uiText: {fileID: 1946235871}
   sentences:
   - "\uBAB8\uC774 \uC880 \uD480\uB9B0\uAC70\uAC19\uC9C0 \uC54A\uC544? \uB2E4\uC74C
@@ -28954,9 +28998,9 @@ RectTransform:
   - {fileID: 1017961773}
   m_Father: {fileID: 428802322}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 2229.79, y: -280.7}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 787.3, y: 561.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1478055288
@@ -31743,6 +31787,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ButtonClickAudio, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1658456375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32376,6 +32432,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675451352}
   m_CullTransparentMesh: 1
+--- !u!1 &1683701632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1683701634}
+  - component: {fileID: 1683701633}
+  m_Layer: 0
+  m_Name: AudioPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1683701633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683701632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 748db217b667ce2449cda65620634806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Btn_MusicPlay: {fileID: 0}
+  Audio_Source: {fileID: 0}
+  fadeDuration: 1
+  MusicData: {fileID: 0}
+  MusicName: 
+--- !u!4 &1683701634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683701632}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1296.4197, y: 515.08795, z: 4.6885834}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1683946343
 GameObject:
   m_ObjectHideFlags: 0
@@ -33479,9 +33584,9 @@ RectTransform:
   - {fileID: 292917594}
   m_Father: {fileID: 428802322}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 3954.93, y: -280.7}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 787.3, y: 561.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1739552527
@@ -35532,7 +35637,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1856979090}
   - component: {fileID: 1856979089}
-  - component: {fileID: 1856979088}
   m_Layer: 0
   m_Name: ConversationTrainingEndCamera
   m_TagString: Untagged
@@ -35540,14 +35644,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1856979088
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856979087}
-  m_Enabled: 1
 --- !u!20 &1856979089
 Camera:
   m_ObjectHideFlags: 0
@@ -35953,6 +36049,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ButtonClickAudio, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -37107,7 +37215,7 @@ GameObject:
   - component: {fileID: 1946235872}
   - component: {fileID: 1946235871}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Text - Conversation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38684,9 +38792,9 @@ RectTransform:
   - {fileID: 469600155}
   m_Father: {fileID: 428802322}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 504.65, y: -280.7}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 787.3, y: 561.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2049838934
@@ -41425,3 +41533,4 @@ SceneRoots:
   - {fileID: 1742328552}
   - {fileID: 1150596288}
   - {fileID: 776648840}
+  - {fileID: 1683701634}
