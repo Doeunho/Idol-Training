@@ -37,4 +37,17 @@ public class AudioPlayer : MonoBehaviour
         Audio_Source.volume = startVolume;
     }
 
+    public void StopAllAudios()
+    {
+        // 모든 AudioSource 컴포넌트를 찾습니다.
+        AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
+
+        // 각 AudioSource 컴포넌트를 반복하여 정지시킵니다.
+        foreach (AudioSource audioSource in audioSources)
+        {
+            audioSource.Stop();
+        }
+    }
+
+
 }
