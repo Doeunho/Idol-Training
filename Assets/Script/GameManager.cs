@@ -9,6 +9,13 @@ public class GameManager : MonoBehaviour
     //
     //종료시 코인 30개 획득 후 스타트 버튼 클릭 안되게
 
+
+
+    
+
+    
+    
+
     void Start()
     {
         
@@ -18,5 +25,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnCilck_TrainingStart1()
+    {
+
     }
 }
