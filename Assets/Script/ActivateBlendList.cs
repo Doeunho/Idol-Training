@@ -18,23 +18,6 @@ public class ActivateBlendList : MonoBehaviour
 
     public GameObject targetObject;
 
-    /*
-    void Start()
-    {
-        // 버튼 클릭 이벤트에 메서드 등록
-        if (activateButton != null)
-        {
-            activateButton.onClick.AddListener(ActivateCameraAndAnimation);
-        }
-
-        // 버튼 클릭 이벤트에 메서드 등록
-        if (activateButton != null)
-        {
-            activateButton.onClick.AddListener(OnButtonClick);
-        }
-
-    }
-    */
 
     public void OnButtonClick()
     {
@@ -57,7 +40,7 @@ public class ActivateBlendList : MonoBehaviour
         if (blendListCamera != null)
         {
             blendListCamera.Priority = 10; // 우선 순위 높여서 활성화
-            
+
         }
 
         // 애니메이션 트리거 설정하여 애니메이션 재생

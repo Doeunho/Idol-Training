@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TouchToToggle : MonoBehaviour
 {
     public GameObject[] objectsToToggle; // 토글할 오브젝트 배열
+    public GameObject StampCard;
 
     void Update()
     {
@@ -15,6 +17,11 @@ public class TouchToToggle : MonoBehaviour
                 if (obj != null)
                     obj.SetActive(!obj.activeSelf);
             }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            StampCard.SetActive(false);
         }
     }
 }

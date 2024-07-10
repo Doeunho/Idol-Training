@@ -48,14 +48,8 @@ public class StampDate : MonoBehaviour
         if (StampCard != null)
         {
             StampCard.SetActive(true);
-            yield return new WaitForSeconds(delayBetweenActivations);
-        }
-
-        // 추가 게임 오브젝트2 활성화
-        if (Stampink != null)
-        {
             Stampink.SetActive(true);
-            yield return new WaitForSeconds(delayBetweenActivations2);
+            yield return new WaitForSeconds(delayBetweenActivations);
         }
     }
 }
