@@ -25,7 +25,7 @@ public class TimerSlider : MonoBehaviour
         UpdateTotalTimeText(totalTime);
 
         // 타이머 텍스트 초기 설정
-        UpdateTimerText(totalTime);
+        UpdateTimerText(0); // 0부터 시작
 
         // 페이드 이미지 초기 설정
         if (fadeImage != null)
@@ -46,16 +46,16 @@ public class TimerSlider : MonoBehaviour
             elapsedTime += Time.deltaTime;
             // 슬라이더 값 업데이트
             timerSlider.value = elapsedTime;
-            // 남은 시간 계산
-            float remainingTime = totalTime - elapsedTime;
+            // 경과 시간 계산
+            float currentTime = elapsedTime;
             // 타이머 텍스트 업데이트
-            UpdateTimerText(remainingTime);
+            UpdateTimerText(currentTime);
             yield return null;
         }
 
         // 타이머가 끝났을 때 슬라이더를 최종 값으로 설정
         timerSlider.value = totalTime;
-        UpdateTimerText(0);
+        UpdateTimerText(totalTime);
 
         // 타이머가 끝나자마자 1초 후 오브젝트 상태 변경
         StartCoroutine(ActivateDeactivateObjectsAfterDelay(1f));
