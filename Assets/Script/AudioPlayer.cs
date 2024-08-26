@@ -23,7 +23,7 @@ public class AudioPlayer : MonoBehaviour
     public IEnumerator PlayAndFadeOutCoroutine()
     {
         Audio_Source.Play();
-        yield return new WaitForSeconds(25.0f); // 25초 재생
+        yield return new WaitForSeconds(25f); // 25초 재생
 
         float startVolume = Audio_Source.volume;
 

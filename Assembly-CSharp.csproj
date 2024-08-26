@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5851AD4B-F3FE-8017-1B32-ABEF55A314D7}</ProjectGuid>
+    <ProjectGuid>{27924509-E807-D463-794F-E908E0826898}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -601,6 +601,18 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.2\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.GradleProject">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.GradleProject.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
@@ -1242,11 +1254,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="FUnit.csproj">
-      <Project>{BA81DB2A-7142-21CF-25DC-5F8D7DA0146B}</Project>
+      <Project>{AC19EF4D-E9D3-D0A3-43FB-38AD9E5ABF2F}</Project>
       <Name>FUnit</Name>
     </ProjectReference>
     <ProjectReference Include="BOYS2.Live.csproj">
-      <Project>{9C241975-5833-588C-42EF-2C014E76CD70}</Project>
+      <Project>{934B82C0-D599-492A-7504-182369E26E5D}</Project>
       <Name>BOYS2.Live</Name>
     </ProjectReference>
   </ItemGroup>
