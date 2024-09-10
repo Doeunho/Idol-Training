@@ -11,4 +11,12 @@ public class UI_ButtonEffects : MonoBehaviour
     [SerializeField] private float maxAlpha = 1f;
 
     [SerializeField] private Image buttonImage;
+
+    private void Start()
+    {
+        if (Btn_GameStart == null)
+        {
+
+        }
+    }
 }

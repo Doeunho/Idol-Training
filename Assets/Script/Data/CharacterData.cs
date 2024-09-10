@@ -5,4 +5,6 @@ using UnityEngine;
 public class CharacterData : ScriptableObject
 {
     public Sprite Spt_CharacterSprite;
+    public string CharacterName;
+
 }
