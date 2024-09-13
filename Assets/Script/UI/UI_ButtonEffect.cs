@@ -35,7 +35,7 @@ public class UI_ButtonEffects : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         cts?.Cancel(); //취소신호
         cts?.Dispose(); //리소스 해제 , 꼭 취소 후 리소스 해제(순서 중요)
