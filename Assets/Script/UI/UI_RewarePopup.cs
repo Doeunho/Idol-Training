@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using System;
@@ -8,77 +10,195 @@ public class UI_RewarePopup : MonoBehaviour
     [SerializeField] private RectTransform parentUI;
     [SerializeField] private RectTransform topUI;
     [SerializeField] private RectTransform bottomUI;
-    [SerializeField] private float topUIDelay = 1f;
-    [SerializeField] private float topUIAnimationDuration = 1f;
-    [SerializeField] private float bottomUIDelay = 0.5f;
-    [SerializeField] private float bottomUIAnimationDuration = 1f;
+    [SerializeField] private RectTransform rankUI;
+    [SerializeField] private RectTransform rewardUI;
+
+    [SerializeField] private Slider rankSlider;
+    [SerializeField] private Text rankText;
+
+    [SerializeField] private float topUIDelay;
+    [SerializeField] private float topUIAnimationDuration;
+    [SerializeField] private float bottomUIDelay;
+    [SerializeField] private float bottomUIAnimationDuration;
+    [SerializeField] private float rankRewardFadeInDuration;
+    [SerializeField] private float rankSliderAnimationDuration = 1f;
+    [SerializeField] private float resetDelay = 0.5f;
 
     private CanvasGroup topUICanvasGroup;
+    private CanvasGroup rankUICanvasGroup;
+    private CanvasGroup rewardUICanvasGroup;
+    private Vector2 topUIOriginalPosition;
+    private Vector2 topUIOriginalAnchorMin;
+    private Vector2 topUIOriginalAnchorMax;
+    private bool isAnimating = false;
 
-    private void Start()
+    private void OnEnable()
     {
-        SetupCanvasGroup();
+        SetupCanvasGroups();
         AnimateUIAsync().Forget();
     }
 
-    private void SetupCanvasGroup()
+    private void OnDisable()
     {
-        topUICanvasGroup = topUI.gameObject.GetComponent<CanvasGroup>();
-        if (topUICanvasGroup == null)
-            topUICanvasGroup = topUI.gameObject.AddComponent<CanvasGroup>();
+        isAnimating = false;
     }
 
-    private async UniTaskVoid AnimateUIAsync()
+    private void InitializeUI()
     {
         // 초기 설정
         topUI.gameObject.SetActive(false);
         bottomUI.gameObject.SetActive(false);
+        rankUI.gameObject.SetActive(false);
+        rewardUI.gameObject.SetActive(false);
         topUICanvasGroup.alpha = 0f;
+        rankUICanvasGroup.alpha = 0f;
+        rewardUICanvasGroup.alpha = 0f;
 
-        // topUI 원래 설정 저장
-        Vector2 originalAnchorMin = topUI.anchorMin;
-        Vector2 originalAnchorMax = topUI.anchorMax;
-        Vector2 originalAnchoredPosition = topUI.anchoredPosition;
-        Vector2 originalSizeDelta = topUI.sizeDelta;
+        rankSlider.value = 0f;
+        UpdateRankText(0);
 
-        // topUI의 중앙으로 앵커, 피벗, 위치 조정
-        topUI.anchorMin = topUI.anchorMax = new Vector2(0.5f, 0.5f);  // 앵커를 중앙으로
-        topUI.pivot = new Vector2(0.5f, 0.5f);  // 피벗을 중앙으로
-        topUI.anchoredPosition = Vector2.zero;  // 부모 중앙에 위치
+        SetupTopUI();
+    }
+    private bool IsUIValid()
+    {
+        return this != null && rankSlider != null && rankText != null;
+    }
+
+    private void SetupCanvasGroups()
+    {
+        topUICanvasGroup = GetOrAddCanvasGroup(topUI);
+        rankUICanvasGroup = GetOrAddCanvasGroup(rankUI);
+        rewardUICanvasGroup = GetOrAddCanvasGroup(rewardUI);
+    }
+
+    private CanvasGroup GetOrAddCanvasGroup(RectTransform rectTransform)
+    {
+        var canvasGroup = rectTransform.GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+            canvasGroup = rectTransform.gameObject.AddComponent<CanvasGroup>();
+        return canvasGroup;
+    }
+
+    private async UniTaskVoid AnimateUIAsync()
+    {
+        if (!IsUIValid()) return;
+
+        isAnimating = true;
+        InitializeUI();
 
         await UniTask.Delay(TimeSpan.FromSeconds(topUIDelay));
-        topUI.gameObject.SetActive(true);
 
-        // topUI 애니메이션: 페이드인
-        await topUICanvasGroup.DOFade(1f, topUIAnimationDuration)
-            .SetEase(Ease.InOutSine)
-            .AsyncWaitForCompletion();
-
-        // 원래 앵커 및 위치로 복원
-        topUI.anchorMin = originalAnchorMin;
-        topUI.anchorMax = originalAnchorMax;
-        topUI.anchoredPosition = originalAnchoredPosition;
-        topUI.sizeDelta = originalSizeDelta;
+        if (!IsUIValid()) return;
+        await AnimateTopUI();
 
         await UniTask.Delay(TimeSpan.FromSeconds(bottomUIDelay));
-        bottomUI.gameObject.SetActive(true);
 
-        // bottomUI 설정
-        bottomUI.anchorMin = new Vector2(0, 1);
-        bottomUI.anchorMax = new Vector2(1, 1);
+        if (!IsUIValid()) return;
+        await AnimateBottomUI();
+
+        if (!IsUIValid()) return;
+        await AnimateRankAndRewardUI();
+
+        while (isAnimating && IsUIValid())
+        {
+            await AnimateRankSlider();
+            await UniTask.Delay(TimeSpan.FromSeconds(resetDelay));
+            if (IsUIValid()) ResetRankSlider();
+        }
+    }
+
+    private void SetupTopUI()
+    {
+        topUIOriginalPosition = topUI.anchoredPosition;
+        topUIOriginalAnchorMin = topUI.anchorMin;
+        topUIOriginalAnchorMax = topUI.anchorMax;
+        topUI.anchorMin = topUI.anchorMax = new Vector2(0.5f, 0.5f);
+        topUI.anchoredPosition = Vector2.zero;
+    }
+
+    private async UniTask AnimateTopUI()
+    {
+        topUI.gameObject.SetActive(true);
+        await DOTween.Sequence()
+            .Join(topUICanvasGroup.DOFade(1f, topUIAnimationDuration))
+            .Join(DOTween.To(() => topUI.anchorMin, x => topUI.anchorMin = x, topUIOriginalAnchorMin, topUIAnimationDuration))
+            .Join(DOTween.To(() => topUI.anchorMax, x => topUI.anchorMax = x, topUIOriginalAnchorMax, topUIAnimationDuration))
+            .Join(topUI.DOAnchorPos(topUIOriginalPosition, topUIAnimationDuration))
+            .SetEase(Ease.InOutSine)
+            .AsyncWaitForCompletion();
+    }
+
+    private async UniTask AnimateBottomUI()
+    {
+        bottomUI.gameObject.SetActive(true);
+        bottomUI.anchorMin = new Vector2(0.5f, 1f);
+        bottomUI.anchorMax = new Vector2(0.5f, 1f);
         bottomUI.pivot = new Vector2(0.5f, 1f);
 
         float topUIBottom = topUI.anchoredPosition.y - topUI.rect.height;
         bottomUI.anchoredPosition = new Vector2(0, topUIBottom);
-        bottomUI.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, topUI.rect.width);
 
-        // bottomUI 초기 크기 설정 (높이를 0으로)
         float originalHeight = bottomUI.rect.height;
-        bottomUI.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 0);
+        bottomUI.sizeDelta = new Vector2(bottomUI.sizeDelta.x, 0);
 
-        // bottomUI 애니메이션: 위에서 아래로 펼쳐지기
         await bottomUI.DOSizeDelta(new Vector2(bottomUI.sizeDelta.x, originalHeight), bottomUIAnimationDuration)
             .SetEase(Ease.OutBack)
             .AsyncWaitForCompletion();
+    }
+
+    private async UniTask AnimateRankAndRewardUI()
+    {
+        rankUI.gameObject.SetActive(true);
+        rewardUI.gameObject.SetActive(true);
+
+        await DOTween.Sequence()
+            .Join(rankUICanvasGroup.DOFade(1f, rankRewardFadeInDuration))
+            .Join(rewardUICanvasGroup.DOFade(1f, rankRewardFadeInDuration))
+            .SetEase(Ease.InOutSine)
+            .AsyncWaitForCompletion();
+    }
+
+    private async UniTask AnimateRankSlider()
+    {
+        if (!IsUIValid()) return;
+
+        float startValue = 0f;
+        float endValue = 50f;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < rankSliderAnimationDuration && IsUIValid())
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / rankSliderAnimationDuration;
+            float currentValue = Mathf.Lerp(startValue, endValue, t);
+
+            if (rankSlider != null)
+            {
+                rankSlider.value = currentValue;
+                UpdateRankText(Mathf.RoundToInt(currentValue));
+            }
+
+            await UniTask.Yield();
+        }
+
+        if (IsUIValid())
+        {
+            rankSlider.value = endValue;
+            UpdateRankText(Mathf.RoundToInt(endValue));
+        }
+    }
+
+    private void UpdateRankText(int value)
+    {
+        if (rankText != null) rankText.text = $"{value:00}";
+    }
+
+    private void ResetRankSlider()
+    {
+        if (rankSlider != null)
+        {
+            rankSlider.value = 0f;
+            UpdateRankText(0);
+        }
     }
 }
