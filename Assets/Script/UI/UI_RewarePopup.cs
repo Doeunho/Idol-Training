@@ -23,6 +23,9 @@ public class UI_RewarePopup : MonoBehaviour
     [SerializeField] private float rankRewardFadeInDuration;
     [SerializeField] private float rankSliderAnimationDuration = 1f;
     [SerializeField] private float resetDelay = 0.5f;
+    [SerializeField] private float checkImageAnimationDuration = 0.5f; // 체크 이미지 애니메이션 시간
+
+    [SerializeField] private Image checkImage; // 체크 이미지
 
     private CanvasGroup topUICanvasGroup;
     private CanvasGroup rankUICanvasGroup;
@@ -58,6 +61,12 @@ public class UI_RewarePopup : MonoBehaviour
         UpdateRankText(0);
 
         SetupTopUI();
+
+        if (checkImage != null)
+        {
+            checkImage.transform.localScale = Vector3.zero;
+            checkImage.gameObject.SetActive(false);
+        }
     }
     private bool IsUIValid()
     {
@@ -83,13 +92,13 @@ public class UI_RewarePopup : MonoBehaviour
     {
         if (!IsUIValid()) return;
 
-        isAnimating = true;
         InitializeUI();
 
         await UniTask.Delay(TimeSpan.FromSeconds(topUIDelay));
 
         if (!IsUIValid()) return;
         await AnimateTopUI();
+        await AnimateCheckImage();
 
         await UniTask.Delay(TimeSpan.FromSeconds(bottomUIDelay));
 
@@ -99,11 +108,10 @@ public class UI_RewarePopup : MonoBehaviour
         if (!IsUIValid()) return;
         await AnimateRankAndRewardUI();
 
-        while (isAnimating && IsUIValid())
+        if (IsUIValid())
         {
             await AnimateRankSlider();
-            await UniTask.Delay(TimeSpan.FromSeconds(resetDelay));
-            if (IsUIValid()) ResetRankSlider();
+            
         }
     }
 
@@ -163,8 +171,11 @@ public class UI_RewarePopup : MonoBehaviour
         if (!IsUIValid()) return;
 
         float startValue = 0f;
-        float endValue = 50f;
+        float endValue = rankSlider.maxValue;
         float elapsedTime = 0f;
+
+        rankSlider.value = startValue;
+        UpdateRankText(Mathf.RoundToInt(startValue));
 
         while (elapsedTime < rankSliderAnimationDuration && IsUIValid())
         {
@@ -199,6 +210,17 @@ public class UI_RewarePopup : MonoBehaviour
         {
             rankSlider.value = 0f;
             UpdateRankText(0);
+        }
+    }
+
+    private async UniTask AnimateCheckImage()
+    {
+        if (checkImage != null)
+        {
+            checkImage.gameObject.SetActive(true);
+            await checkImage.transform.DOScale(Vector3.one, checkImageAnimationDuration)
+                .SetEase(Ease.OutBack)
+                .AsyncWaitForCompletion();
         }
     }
 }
