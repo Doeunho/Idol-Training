@@ -4269,7 +4269,6 @@ GameObject:
   m_Component:
   - component: {fileID: 549171573}
   - component: {fileID: 549171574}
-  - component: {fileID: 549171575}
   m_Layer: 0
   m_Name: InstructorCharacterRoot
   m_TagString: Untagged
@@ -4313,23 +4312,6 @@ PlayableDirector:
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
---- !u!114 &549171575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 549171572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c1b5e76eba899f48a34928bf9ca236f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InstructorCharacterRoot1: {fileID: 0}
-  InstructorCharacterRoot2: {fileID: 0}
-  InstructorCharacterRoot3: {fileID: 0}
-  InstructorCharacterRoot4: {fileID: 0}
-  InstructorCharacterRoot5: {fileID: 0}
 --- !u!1 &560277028 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5434157114518038663, guid: 96d7fd6de92c0724c9c3503f4e90942e, type: 3}
@@ -6395,6 +6377,17 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 358750437890206297, guid: 54c4adb8cce31fe41937b1cc8e4960ff, type: 3}
   m_PrefabInstance: {fileID: 9076427376030258621}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &963194228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3346256066140700885, guid: 54c4adb8cce31fe41937b1cc8e4960ff, type: 3}
+  m_PrefabInstance: {fileID: 9076427376030258621}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849545652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f1f714467925e43944c7206b5ee38a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &975030455
 GameObject:
   m_ObjectHideFlags: 0
@@ -7216,6 +7209,10 @@ PrefabInstance:
     - target: {fileID: 1400322352612939662, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1417781110653968507, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7526845117846222824, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
       propertyPath: m_CastShadows
@@ -9438,7 +9435,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1707552534}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 963194228}
+        m_TargetAssemblyTypeName: ActivateBlendList, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 963194228}
+        m_TargetAssemblyTypeName: ActivateBlendList, Assembly-CSharp
+        m_MethodName: MaoActivateCameraAndAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1263451271}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &1742328551
 GameObject:
   m_ObjectHideFlags: 0
@@ -9448,7 +9481,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1742328552}
-  - component: {fileID: 1742328553}
   m_Layer: 0
   m_Name: 'ConversationTrainingEndRoot '
   m_TagString: Untagged
@@ -9471,18 +9503,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1742328553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742328551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90c85e71fe36b504793b35adc6000e95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1743305580
 GameObject:
   m_ObjectHideFlags: 0
