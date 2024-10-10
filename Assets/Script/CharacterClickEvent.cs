@@ -39,7 +39,7 @@ public class CharacterClickEvent : MonoBehaviour
             characterAnimControl.PlaySpecificAnimation($"Idle_{_animCount}");
             _animCount++;
 
-            _animCount = (_animCount > 2) ? 0 : _animCount;
+            _animCount = (_animCount > 3) ? 0 : _animCount;
 
         }
     }
