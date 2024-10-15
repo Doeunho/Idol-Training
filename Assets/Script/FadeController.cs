@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using Cysharp.Threading.Tasks;
+using System;
 
 public class FadeController : MonoBehaviour
 {
@@ -11,35 +13,26 @@ public class FadeController : MonoBehaviour
 
     private void Start()
     {
-        // CanvasGroup 컴포넌트 추가 및 초기 설정
         canvasGroup = fadeImage.GetComponent<CanvasGroup>();
         if (canvasGroup == null)
         {
             canvasGroup = fadeImage.gameObject.AddComponent<CanvasGroup>();
         }
-
-        // CanvasGroup 초기 설정
         canvasGroup.alpha = 1f;
-        canvasGroup.blocksRaycasts = false; // Raycast를 차단하지 않도록 설정
-
-        // 화면에 보이지 않도록 초기 설정
+        canvasGroup.blocksRaycasts = false;
         fadeImage.gameObject.SetActive(false);
-
     }
 
-    public void StartFadeOut()
+    public async UniTaskVoid StartFadeOut()
     {
-        // 이미지를 활성화하고 페이드아웃 시작
         fadeImage.gameObject.SetActive(true);
-        StartCoroutine(FadeOutAfterDelay(1f));  // 2초 후 페이드아웃 시작
+        await FadeOutAfterDelay(1f).AttachExternalCancellation(this.GetCancellationTokenOnDestroy());
     }
 
-    private IEnumerator FadeOutAfterDelay(float delay)
+    private async UniTask FadeOutAfterDelay(float delay)
     {
-        // 지정된 시간(2초) 동안 대기
-        yield return new WaitForSeconds(delay);
+        await UniTask.Delay(TimeSpan.FromSeconds(delay));
 
-        // 페이드아웃 실행
         float startAlpha = 1f;
         float endAlpha = 0f;
         float elapsedTime = 0;
@@ -49,10 +42,9 @@ public class FadeController : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float alpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / fadeDuration);
             canvasGroup.alpha = alpha;
-            yield return null;
+            await UniTask.Yield();
         }
 
-        // 페이드 완료 후 알파값을 완전히 0으로 설정하고 이미지를 비활성화
         canvasGroup.alpha = 0f;
         fadeImage.gameObject.SetActive(false);
     }
