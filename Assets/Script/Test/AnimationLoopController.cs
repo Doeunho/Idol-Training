@@ -9,23 +9,49 @@ public class AnimationLoopController : MonoBehaviour
     [SerializeField] private string nextStateName;
     [SerializeField] private int loopcount = 3;
 
-    private int currentloop = 0;
+    [SerializeField] private int currentloop = 0;
+    private bool isTransitioning = false;
+
+    private void Update()
+    {
+        Test();
+    }
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     public void Test()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0))
         {
-            currentloop++;
+            if (animator == null) return;
 
-            if (currentloop >= loopcount)
+            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+            if (stateInfo.IsName(currentStateName))
             {
-                animator.Play(nextStateName);
-                currentloop = 0;
-            }
-            else
-            {
-                animator.Play(currentStateName, 0, 0f);
+                if (stateInfo.normalizedTime % 1f > 0.99f && !isTransitioning)
+                {
+                    currentloop++;
+                    isTransitioning = true;
+
+                    if (currentloop >= loopcount)
+                    {
+                        animator.Play(nextStateName, 0, 0f);
+                        currentloop = 0;
+                    }
+                    else
+                    {
+                        animator.Play(currentStateName, 0, 0f);
+                    }
+                }
+                else if (stateInfo.normalizedTime % 1f < 0.01f)
+                {
+                    isTransitioning = false;
+                }
             }
         }
     }
 }
+
