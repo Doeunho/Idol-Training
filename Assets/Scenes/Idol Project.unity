@@ -7882,10 +7882,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1397030934}
-  currentStateName: TricepsKickback_2
-  nextStateName: TricepsKickback_3
-  loopcount: 3
-  currentloop: 0
+  isTrainingParamName: isTraining
+  defaultLoopCount: 8
+  ignoredStates: []
 --- !u!1 &1403403984
 GameObject:
   m_ObjectHideFlags: 0
@@ -12534,13 +12533,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122033096}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.049879286, y: -0.70534533, z: 0.049879286, w: 0.70534533}
-  m_LocalPosition: {x: -47.157, y: 1.207, z: 2.654}
+  m_LocalRotation: {x: 0.02159401, y: -0.70677704, z: 0.02159401, w: 0.70677704}
+  m_LocalPosition: {x: -47.149, y: 1.082, z: 2.654}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 8.09, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 3.5, y: -90, z: 0}
 --- !u!81 &2122033100
 AudioListener:
   m_ObjectHideFlags: 0
@@ -13115,7 +13114,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -38, y: 17}
+  m_AnchoredPosition: {x: -38, y: 57}
   m_SizeDelta: {x: 1040, y: 524}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1113462587481042741
