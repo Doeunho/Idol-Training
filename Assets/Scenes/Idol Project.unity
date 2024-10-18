@@ -7882,9 +7882,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1397030934}
-  isTrainingParamName: isTraining
-  defaultLoopCount: 8
-  ignoredStates: []
+  animationClipName: Kickback_2
+  loopCount: 3
+  boolParameterName: isTraining
 --- !u!1 &1403403984
 GameObject:
   m_ObjectHideFlags: 0
@@ -9833,7 +9833,7 @@ PrefabInstance:
     - target: {fileID: 8131202913806129291, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 861ffca5b2647624e8e0971b587f12db, type: 2}
+      objectReference: {fileID: 22100000, guid: 7218b141c5c94d0478fdc3fd305c59a6, type: 2}
     - target: {fileID: 8974322813742863937, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.022
