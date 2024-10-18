@@ -1,32 +1,62 @@
 using UnityEngine;
-using System.Collections.Generic;
-#if UNITY_EDITOR
 using UnityEditor.Animations;
-#endif
-
 public class AnimationLoopController : MonoBehaviour
 {
-    public Animator animator;
-    public string animationClipName;
-    public int loopCount = 3;
-    public string boolParameterName;
+    [SerializeField] private Animator animator;
+    [SerializeField] public string animationStateName;  // 애니메이션 클립 이름 대신 상태 이름 사용
+    [SerializeField] public int loopCount = 2;
+    [SerializeField] public int currentLoop = 0;
+    [SerializeField] private string boolParameterName = "isTraining";
+    private float lastNormalizedTime = 0f;
+    private bool isAnimationPlaying = false;
 
-    private int currentLoop = 0;
+    void Start()
+    {
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
+        }
+        ResetLoop();
+    }
 
     void Update()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0))
+        if (animator == null) return;
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        if (stateInfo.IsName(animationStateName))
         {
-            currentLoop++;
-            if (currentLoop >= loopCount)
+            float normalizedTime = stateInfo.normalizedTime % 1;
+            if (!isAnimationPlaying)
             {
-                animator.SetBool(boolParameterName, true);
-                currentLoop = 0;
+                isAnimationPlaying = true;
+                lastNormalizedTime = normalizedTime;
             }
-            else
+            else if (normalizedTime < lastNormalizedTime)
             {
-                animator.Play(animationClipName, 0, 0f);
+                currentLoop++;
+                Debug.Log($"Loop completed. Current loop: {currentLoop}/{loopCount}");
+                if (currentLoop >= loopCount)
+                {
+                    animator.SetBool(boolParameterName, true);
+                    Debug.Log("Animation loops completed. Boolean set to true.");
+                    isAnimationPlaying = false;
+                }
             }
+            lastNormalizedTime = normalizedTime;
         }
+        else
+        {
+            isAnimationPlaying = false;
+        }
+    }
+
+    public void ResetLoop()
+    {
+        currentLoop = 0;
+        lastNormalizedTime = 0f;
+        isAnimationPlaying = false;
+        animator.SetBool(boolParameterName, false);
+        Debug.Log("Animation loop reset. Boolean set to false.");
     }
 }
