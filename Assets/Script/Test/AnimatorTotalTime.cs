@@ -45,12 +45,11 @@ public class AnimationTimer : MonoBehaviour
         float remainingTime = Mathf.Max(0, totalTime - elapsedTime);
         int minutes = Mathf.FloorToInt(remainingTime / 60f);
         int seconds = Mathf.FloorToInt(remainingTime % 60f);
-        int milliseconds = Mathf.FloorToInt((remainingTime * 1000) % 1000);
-        timerText.text = string.Format("{0:00}:{1:00}.{2:000}", minutes, seconds, milliseconds);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
         if (remainingTime <= 0)
         {
-            timerText.text = "00:00.000(완료)";
+            timerText.text = "00:00(완료)";
         }
     }
 
