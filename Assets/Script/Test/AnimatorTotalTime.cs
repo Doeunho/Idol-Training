@@ -1,69 +1,106 @@
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AnimationTimer : MonoBehaviour
 {
-    public Animator animator;
-    public Text timerText;
-    public AnimationLoopController loopController;
-
+    [SerializeField] private Animator animator;
+    [SerializeField] private Text timerText;
+    [SerializeField] private AnimationLoopController loopController;
     private float startTime;
-    private float elapsedTime;
     private float totalAnimationLength;
+    private bool isTimerRunning = false;
+    private RuntimeAnimatorController lastAnimatorController;
 
     void Start()
     {
         if (animator == null) animator = GetComponent<Animator>();
         if (loopController == null) loopController = GetComponent<AnimationLoopController>();
-
         if (animator == null || loopController == null)
         {
-            Debug.LogError("Required components are missing!");
+            Debug.LogError("필요한 컴포넌트가 없습니다!");
             enabled = false;
             return;
         }
-
+        lastAnimatorController = animator.runtimeAnimatorController;
         CalculateTotalAnimationLength();
-        ResetTimer();
     }
 
     void Update()
     {
-        elapsedTime = Time.time - startTime;
-        UpdateTimerDisplay();
+        if (CheckAnimatorControllerChanged())
+        {
+            ResetTimerAndRecalculate();
+        }
+
+        if (isTimerRunning)
+        {
+            UpdateTimerDisplay();
+        }
     }
 
-    void ResetTimer()
+    bool CheckAnimatorControllerChanged()
+    {
+        if (animator.runtimeAnimatorController != lastAnimatorController)
+        {
+            lastAnimatorController = animator.runtimeAnimatorController;
+            return true;
+        }
+        return false;
+    }
+
+    void ResetTimerAndRecalculate()
+    {
+        Debug.Log("애니메이터 컨트롤러가 변경되었습니다. 타이머를 초기화합니다.");
+        StopTimer();
+        CalculateTotalAnimationLength();
+        StartTimer();
+        if (loopController != null)
+        {
+            loopController.ResetLoop();
+        }
+    }
+
+    public void StartTimer()
     {
         startTime = Time.time;
-        elapsedTime = 0f;
+        isTimerRunning = true;
+    }
+
+    public void StopTimer()
+    {
+        isTimerRunning = false;
     }
 
     void UpdateTimerDisplay()
     {
-        float totalTime = totalAnimationLength * loopController.loopCount;
-        float remainingTime = Mathf.Max(0, totalTime - elapsedTime);
+        float elapsedTime = Time.time - startTime;
+        float remainingTime = Mathf.Max(0, totalAnimationLength - elapsedTime);
         int minutes = Mathf.FloorToInt(remainingTime / 60f);
         int seconds = Mathf.FloorToInt(remainingTime % 60f);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-
         if (remainingTime <= 0)
         {
             timerText.text = "00:00(완료)";
+            StopTimer();
         }
     }
 
     void CalculateTotalAnimationLength()
     {
         totalAnimationLength = 0f;
-        RuntimeAnimatorController ac = animator.runtimeAnimatorController;
+        AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
 
-        foreach (AnimationClip clip in ac.animationClips)
+        if (clips.Length < 3)
         {
-            totalAnimationLength += clip.length;
-            Debug.Log($"Animation clip: {clip.name}, Length: {clip.length}");
+            Debug.LogError("애니메이션 클립의 수가 예상된 상태의 수보다 적습니다.");
+            return;
         }
 
-        Debug.Log($"Total animation length: {totalAnimationLength}");
+        totalAnimationLength += clips[0].length; // Kickback_1
+        totalAnimationLength += clips[1].length * (loopController.loopCount + 2); // Kickback_2 (looping state)
+        totalAnimationLength += clips[2].length; // Kickback_3
+
+        Debug.Log($"총 애니메이션 길이: {totalAnimationLength}");
     }
 }
