@@ -10,17 +10,17 @@ public class AnimationLoopController : MonoBehaviour
     private float lastNormalizedTime = 0f;
     private bool isAnimationPlaying = false;
 
-    public AnimationTimer animationTimer;
+    public AnimationTotalTimer animationTimer;
 
     void Start()
     {
         if (animator == null)
         {
-            animator = GetComponent<Animator>();
+            animator = GetComponentInChildren<Animator>();
         }
         if (animationTimer == null)
         {
-            animationTimer = GetComponent<AnimationTimer>();
+            animationTimer = GetComponent<AnimationTotalTimer>();
         }
         ResetLoop();
     }

@@ -4268,6 +4268,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 549171573}
+  - component: {fileID: 549171575}
+  - component: {fileID: 549171574}
   m_Layer: 0
   m_Name: InstructorCharacterRoot
   m_TagString: Untagged
@@ -4291,6 +4293,40 @@ Transform:
   - {fileID: 1397030925}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &549171574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549171572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52cab467e61cca9478a0253c57cd8e3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  timerText: {fileID: 1663547682}
+  loopController: {fileID: 0}
+  progressSlider: {fileID: 1545767688055304466}
+--- !u!114 &549171575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549171572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21901871505a644da5440884780f56a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  loopCount: 2
+  currentLoop: 0
+  boolParameterName: isTraining
+  currentStateIndex: 0
+  animationTimer: {fileID: 0}
 --- !u!1 &560277028 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5434157114518038663, guid: 96d7fd6de92c0724c9c3503f4e90942e, type: 3}
@@ -7456,7 +7492,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -61}
-  m_SizeDelta: {x: 200, y: 206}
+  m_SizeDelta: {x: 126.8, y: 206}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1227004893
 MonoBehaviour:
@@ -7930,49 +7966,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393409792}
   m_CullTransparentMesh: 1
---- !u!1 &1397030924 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1400322352612939662, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
-  m_PrefabInstance: {fileID: 1748899808}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1397030925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8974322813742863937, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
   m_PrefabInstance: {fileID: 1748899808}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1397030935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1397030924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c21901871505a644da5440884780f56a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  loopCount: 2
-  currentLoop: 0
-  boolParameterName: isTraining
-  currentStateIndex: 0
-  animationTimer: {fileID: 0}
---- !u!114 &1397030944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1397030924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52cab467e61cca9478a0253c57cd8e3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  timerText: {fileID: 1663547682}
-  loopController: {fileID: 0}
 --- !u!1 &1403403984
 GameObject:
   m_ObjectHideFlags: 0
@@ -9413,7 +9411,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8ca62558dda3d4f4ebc2930d70fdf87b, type: 3}
     m_FontSize: 36
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 74
@@ -9981,6 +9979,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mao Body
       objectReference: {fileID: 0}
+    - target: {fileID: 1400322352612939662, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4614583065956342526, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -10003,7 +10005,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 861ffca5b2647624e8e0971b587f12db, type: 2}
     - target: {fileID: 8974322813742863937, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.022
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8974322813742863937, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10044,13 +10046,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1400322352612939662, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1397030935}
-    - targetCorrespondingSourceObject: {fileID: 1400322352612939662, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1397030944}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
 --- !u!1 &1753736157
 GameObject:
@@ -11870,7 +11866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 1921152261}
-  fadeDuration: 1
+  fadeDuration: 0.1
 --- !u!114 &1921152261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13510,18 +13506,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232134c609aed6d4d87fe822427be3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerSlider: {fileID: 8969427510993640124}
-  timerText: {fileID: 7276469190036336837}
-  totalTimeText: {fileID: 4406094654358362646}
-  fadeImage: {fileID: 1921152261}
-  objectsToActivate:
-  - {fileID: 0}
-  - {fileID: 0}
-  objectsToDeactivate:
-  - {fileID: 0}
-  - {fileID: 6899796280558884723}
-  fadeDuration: 1
-  totalTime: 154
+  timerSlider: {fileID: 0}
+  timerText: {fileID: 1663547682}
+  totalTimeText: {fileID: 0}
+  totalTime: 153
 --- !u!114 &1224963117179507812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17046,7 +17034,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7521915730113400766}
   - component: {fileID: 1217077034768275656}
-  - component: {fileID: 6082960646212578692}
   m_Layer: 5
   m_Name: TrainingTimer
   m_TagString: Untagged
@@ -18960,20 +18947,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113462587481042741}
   m_CullTransparentMesh: 1
---- !u!114 &6082960646212578692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4017781645892964897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9094337da4b01894ca4e2e9d245deee7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeImage: {fileID: 1921152261}
-  fadeDuration: 1
 --- !u!224 &6143217189571033901
 RectTransform:
   m_ObjectHideFlags: 0

@@ -2,11 +2,12 @@ using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AnimationTimer : MonoBehaviour
+public class AnimationTotalTimer : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private Text timerText;
     [SerializeField] private AnimationLoopController loopController;
+    [SerializeField] private Slider progressSlider;
     private float startTime;
     private float totalAnimationLength;
     private bool isTimerRunning = false;
@@ -14,13 +15,20 @@ public class AnimationTimer : MonoBehaviour
 
     void Start()
     {
-        if (animator == null) animator = GetComponent<Animator>();
+        if (animator == null) animator = GetComponentInChildren<Animator>();
         if (loopController == null) loopController = GetComponent<AnimationLoopController>();
         if (animator == null || loopController == null)
         {
             Debug.LogError("필요한 컴포넌트가 없습니다!");
             enabled = false;
             return;
+        }
+
+        if (progressSlider != null)
+        {
+            progressSlider.minValue = 0f;
+            progressSlider.maxValue = 1f;
+            progressSlider.value = 0f;
         }
         lastAnimatorController = animator.runtimeAnimatorController;
         CalculateTotalAnimationLength();
@@ -36,6 +44,7 @@ public class AnimationTimer : MonoBehaviour
         if (isTimerRunning)
         {
             UpdateTimerDisplay();
+            UpdateProgressSlider();
         }
     }
 
@@ -59,6 +68,11 @@ public class AnimationTimer : MonoBehaviour
         {
             loopController.ResetLoop();
         }
+
+        if (progressSlider == null)
+        {
+            progressSlider.value = 0f;
+        }
     }
 
     public void StartTimer()
@@ -81,8 +95,23 @@ public class AnimationTimer : MonoBehaviour
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         if (remainingTime <= 0)
         {
-            timerText.text = "00:00(완료)";
+            timerText.text = "00:00";
             StopTimer();
+
+            if(progressSlider != null)
+            {
+                progressSlider.value = 1f;
+            }
+        }
+    }
+
+    void UpdateProgressSlider()
+    {
+        if (progressSlider != null && totalAnimationLength > 0)
+        {
+            float elapsedTime = Time.time - startTime;
+            float progress = Mathf.Clamp01(elapsedTime / totalAnimationLength);
+            progressSlider.value = progress;
         }
     }
 
@@ -102,5 +131,10 @@ public class AnimationTimer : MonoBehaviour
         totalAnimationLength += clips[2].length; // Kickback_3
 
         Debug.Log($"총 애니메이션 길이: {totalAnimationLength}");
+
+        if (progressSlider != null)
+        {
+            progressSlider.value = 0f;
+        }
     }
 }

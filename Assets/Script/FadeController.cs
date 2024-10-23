@@ -7,11 +7,11 @@ using System;
 public class FadeController : MonoBehaviour
 {
     public Image fadeImage;  // 페이드 효과에 사용할 이미지
-    public float fadeDuration = 1f;  // 페이드아웃 지속 시간
+    public float fadeDuration;  // 페이드아웃 지속 시간
 
     private CanvasGroup canvasGroup;
 
-    private void Start()
+    private async void Start()
     {
         canvasGroup = fadeImage.GetComponent<CanvasGroup>();
         if (canvasGroup == null)
@@ -21,9 +21,10 @@ public class FadeController : MonoBehaviour
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = false;
         fadeImage.gameObject.SetActive(false);
+
     }
 
-    public async UniTaskVoid StartFadeOut()
+    public async UniTask StartFadeOut()
     {
         fadeImage.gameObject.SetActive(true);
         await FadeOutAfterDelay(1f).AttachExternalCancellation(this.GetCancellationTokenOnDestroy());
