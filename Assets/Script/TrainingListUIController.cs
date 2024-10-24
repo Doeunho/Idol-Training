@@ -14,7 +14,7 @@ public class TrainingListUIController : MonoBehaviour
         spawnButton.onClick.AddListener(SpawnObjects);
     }
 
-    private void SpawnObjects()
+    public void SpawnObjects()
     {
         for (int i = 0; i < 5; i++)
         {

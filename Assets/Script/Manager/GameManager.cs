@@ -22,16 +22,6 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("·¹º§¾÷");
-        }
-    }
-
     public void Getexp()
     {
         exp++;
