@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int rank;
     public int[] nextexp = { 200 };
 
+
     //게임 시작, 종료 코루틴 만들기
     //
     //종료시 코인 30개 획득 후 스타트 버튼 클릭 안되게

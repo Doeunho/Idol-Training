@@ -517,7 +517,6 @@ GameObject:
   - component: {fileID: 3402346519080729530}
   - component: {fileID: 4993159371590969946}
   - component: {fileID: 5310464903390164758}
-  - component: {fileID: 1257631900883139714}
   m_Layer: 5
   m_Name: Training List
   m_TagString: Untagged
@@ -601,20 +600,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.49019608}
   m_EffectDistance: {x: 29.91, y: -24.28}
   m_UseGraphicAlpha: 1
---- !u!114 &1257631900883139714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3298320204600981860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb64767a2d3bd164da67fb229d618347, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioPlayer: {fileID: 0}
-  _audioClip: {fileID: 8300000, guid: 9ec749f346121864ea692c5f4b620763, type: 3}
 --- !u!1 &4052929198460543449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,7 +1343,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: 01
 --- !u!1 &7285071221908147929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,7 +1731,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1257631900883139714}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioPlayerView, Assembly-CSharp
         m_MethodName: OnClick_PlayAudio
         m_Mode: 1

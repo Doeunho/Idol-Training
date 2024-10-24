@@ -22,7 +22,6 @@ public class UI_RewarePopup : MonoBehaviour
     [SerializeField] private float bottomUIAnimationDuration;
     [SerializeField] private float rankRewardFadeInDuration;
     [SerializeField] private float rankSliderAnimationDuration = 1f;
-    [SerializeField] private float resetDelay = 0.5f;
     [SerializeField] private float checkImageAnimationDuration = 0.5f; // 체크 이미지 애니메이션 시간
 
     [SerializeField] private Image checkImage; // 체크 이미지

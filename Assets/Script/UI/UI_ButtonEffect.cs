@@ -4,6 +4,7 @@ using Cysharp.Threading.Tasks;
 using System.Threading;
 using UnityEditor;
 using Cysharp.Threading.Tasks.CompilerServices;
+using System;
 
 public class UI_ButtonEffects : MonoBehaviour
 {
@@ -18,35 +19,83 @@ public class UI_ButtonEffects : MonoBehaviour
 
     async void Start()
     {
-        if (Btn_GameStart == null)
+        try
         {
-            Btn_GameStart = gameObject.AddComponent<Button>();
-        }
+            if (Btn_GameStart == null)
+            {
+                Btn_GameStart = gameObject.AddComponent<Button>();
+            }
+            buttonImage = Btn_GameStart.GetComponent<Image>();
+            if (buttonImage != null)
+            {
+                cts = new CancellationTokenSource();
+                Btn_GameStart.onClick.AddListener(OnButtonClick);
 
-        buttonImage = Btn_GameStart.GetComponent<Image>();
-        if (buttonImage != null )
-        {
-            cts = new CancellationTokenSource();
-            await FadeButtonAsync(cts.Token);
+                // GetCancellationTokenOnDestroy()를 사용하여 자동 취소 처리
+                await FadeButtonAsync(this.GetCancellationTokenOnDestroy());
+            }
+            else
+            {
+                Debug.LogError("버튼이미지를 찾을수 없다.");
+            }
         }
-        else
+        catch (OperationCanceledException)
         {
-            Debug.LogError("버튼이미지를 찾을수 없다.");
+            // 작업 취소 시 정상적으로 처리
+            Debug.Log("FadeButton operation was canceled");
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError($"Error in Start: {ex}");
         }
     }
 
     private void OnDisable()
     {
-        cts?.Cancel(); //취소신호
-        cts?.Dispose(); //리소스 해제 , 꼭 취소 후 리소스 해제(순서 중요)
+        if (Btn_GameStart != null)
+        {
+            Btn_GameStart.onClick.RemoveListener(OnButtonClick);
+        }
+
+        if (cts != null)
+        {
+            cts.Cancel();
+            cts.Dispose();
+            cts = null;
+        }
+    }
+
+    private void OnButtonClick()
+    {
+        HandleButtonClickAsync().Forget();
+    }
+
+    private async UniTaskVoid HandleButtonClickAsync()
+    {
+        try
+        {
+            await UniTask.Delay(100, cancellationToken: this.GetCancellationTokenOnDestroy());
+            Debug.Log("Button clicked!");
+        }
+        catch (OperationCanceledException)
+        {
+            Debug.Log("Button click operation was canceled");
+        }
     }
 
     async UniTask FadeButtonAsync(CancellationToken cancellationToken)
     {
-        while(!cancellationToken.IsCancellationRequested)
+        try
         {
-            await FadeButton(minAlpha, cancellationToken);
-            await FadeButton(maxAlpha, cancellationToken);
+            while (!cancellationToken.IsCancellationRequested)
+            {
+                await FadeButton(minAlpha, cancellationToken);
+                await FadeButton(maxAlpha, cancellationToken);
+            }
+        }
+        catch (OperationCanceledException)
+        {
+            Debug.Log("FadeButton operation was canceled");
         }
     }
 
@@ -56,13 +105,21 @@ public class UI_ButtonEffects : MonoBehaviour
         Color endColor = new Color(startColor.r, startColor.g, startColor.b, btnAlpfa);
         float elapsedTime = 0f;
 
-        while (elapsedTime < fadeDuration)
+        try
         {
-            elapsedTime += Time.deltaTime;
-            float t = elapsedTime / fadeDuration;
-            buttonImage.color = Color.Lerp(startColor, endColor, t);
-            await UniTask.Yield(PlayerLoopTiming.Update, cancellationToken);
+            while (elapsedTime < fadeDuration)
+            {
+                elapsedTime += Time.deltaTime;
+                float t = elapsedTime / fadeDuration;
+                buttonImage.color = Color.Lerp(startColor, endColor, t);
+                await UniTask.Yield(PlayerLoopTiming.Update, cancellationToken);
+            }
+            buttonImage.color = endColor;
         }
-        buttonImage.color = endColor;
+        catch (OperationCanceledException)
+        {
+            Debug.Log("Fade operation was canceled");
+            throw; // 상위로 예외를 전파
+        }
     }
 }
