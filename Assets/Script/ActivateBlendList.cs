@@ -3,6 +3,7 @@ using Cinemachine;
 using UnityEngine.UI;
 using System.Collections;
 using Unity.VisualScripting;
+using Cysharp.Threading.Tasks;
 
 public class ActivateBlendList : MonoBehaviour
 {
@@ -10,9 +11,6 @@ public class ActivateBlendList : MonoBehaviour
     public CinemachineVirtualCamera initialCamera;     // 초기 위치 카메라 참조
     public Button activateButton;                      // 버튼 참조
     public Animator Mao_characterAnimator;             // 캐릭터의 Animator
-    public Animator Makoto_characterAnimator;          // 캐릭터의 Animator
-    public Animator Hokuto_characterAnimator;          // 캐릭터의 Animator
-
     public string animationTrigger;                    // 재생할 애니메이션 트리거 이름
 
     public float delay;
@@ -20,65 +18,52 @@ public class ActivateBlendList : MonoBehaviour
 
     public GameObject targetObject;
 
-    public void OnButtonClick()
+    public async void OnButtonClick()
     {
-        // 코루틴 시작
-        StartCoroutine(ActivateObject());
+        await ActivateObject();
     }
 
-    IEnumerator ActivateObject()
+    private async UniTask ActivateObject()
     {
-        // 지연 시간만큼 대기
-        yield return new WaitForSeconds(delay);
-
-        // 타겟 오브젝트 활성화
+        await UniTask.Delay((int)delay * 1000);
         targetObject.SetActive(true);
     }
 
-    public void MaoActivateCameraAndAnimation()
+    public async void MaoActivateCamera()
     {
-        StartCoroutine(ActivateCameraAndAnimation(Mao_characterAnimator));
+        await ActivateCameraAndAnimation(Mao_characterAnimator);
+        await ActivateObject();
     }
 
-    public void MakotoActivateCameraAndAnimation()
-    {
-        StartCoroutine(ActivateCameraAndAnimation(Makoto_characterAnimator));
-    }
-
-    public void HokutoActivateCameraAndAnimation()
-    {
-        StartCoroutine(ActivateCameraAndAnimation(Hokuto_characterAnimator));
-    }
-
-    private IEnumerator ActivateCameraAndAnimation(Animator characterAnimator)
+    private async UniTask ActivateCameraAndAnimation(Animator characterAnimator)
     {
         // Blend List Camera 활성화
         if (blendListCamera != null)
         {
-            blendListCamera.Priority = 10; // 우선 순위 높여서 활성화
+            blendListCamera.Priority = 10;
         }
 
-        // 애니메이션 트리거 설정하여 애니메이션 재생
+        // 애니메이션 트리거 설정
         if (characterAnimator != null && !string.IsNullOrEmpty(animationTrigger))
         {
             characterAnimator.SetTrigger(animationTrigger);
         }
 
-        // 블렌드 리스트 카메라 전환 시간 동안 대기
-        yield return new WaitForSeconds(blendDuration);
+        // 블렌드 리스트 카메라 전환 시간 대기
+        await UniTask.Delay((int)(blendDuration));
 
         // 초기 카메라로 되돌리기
         if (initialCamera != null)
         {
-            blendListCamera.Priority = 5; // 블렌드 리스트 카메라 우선 순위 낮추기
-            initialCamera.Priority = 10; // 초기 카메라 우선 순위 높이기
+            blendListCamera.Priority = 5;
+            initialCamera.Priority = 10;
         }
 
-        // 애니메이션 종료 후 초기화 (필요한 경우)
-        yield return new WaitForSeconds(2.0f); // 애니메이션이 끝난 후 대기 시간 조절
+        // 애니메이션 종료 후 초기화
+        await UniTask.Delay(2000); // 2초 대기
         if (characterAnimator != null)
         {
-            characterAnimator.ResetTrigger(animationTrigger); // 트리거 초기화
+            characterAnimator.ResetTrigger(animationTrigger);
         }
     }
 }

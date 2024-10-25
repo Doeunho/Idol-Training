@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
     }
+
     public void Getexp()
     {
         exp++;

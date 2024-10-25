@@ -15,6 +15,7 @@ public class UI_RewarePopup : MonoBehaviour
 
     [SerializeField] private Slider rankSlider;
     [SerializeField] private Text rankText;
+    [SerializeField] private Text coinText;
 
     [SerializeField] private float topUIDelay;
     [SerializeField] private float topUIAnimationDuration;
@@ -22,9 +23,11 @@ public class UI_RewarePopup : MonoBehaviour
     [SerializeField] private float bottomUIAnimationDuration;
     [SerializeField] private float rankRewardFadeInDuration;
     [SerializeField] private float rankSliderAnimationDuration = 1f;
-    [SerializeField] private float checkImageAnimationDuration = 0.5f; // 체크 이미지 애니메이션 시간
+    [SerializeField] private float checkImageAnimationDuration = 0.5f;
+    [SerializeField] private float coinAnimationDuration = 1f; // 코인 애니메이션 지속 시간
+    [SerializeField] private int targetCoinValue = 10; // 최종 코인 값
 
-    [SerializeField] private Image checkImage; // 체크 이미지
+    [SerializeField] private Image checkImage;
 
     private CanvasGroup topUICanvasGroup;
     private CanvasGroup rankUICanvasGroup;
@@ -47,7 +50,6 @@ public class UI_RewarePopup : MonoBehaviour
 
     private void InitializeUI()
     {
-        // 초기 설정
         topUI.gameObject.SetActive(false);
         bottomUI.gameObject.SetActive(false);
         rankUI.gameObject.SetActive(false);
@@ -58,6 +60,10 @@ public class UI_RewarePopup : MonoBehaviour
 
         rankSlider.value = 0f;
         UpdateRankText(0);
+        if (coinText != null)
+        {
+            coinText.text = "0";
+        }
 
         SetupTopUI();
 
@@ -67,9 +73,10 @@ public class UI_RewarePopup : MonoBehaviour
             checkImage.gameObject.SetActive(false);
         }
     }
+
     private bool IsUIValid()
     {
-        return this != null && rankSlider != null && rankText != null;
+        return this != null && rankSlider != null && rankText != null && coinText != null;
     }
 
     private void SetupCanvasGroups()
@@ -109,11 +116,28 @@ public class UI_RewarePopup : MonoBehaviour
 
         if (IsUIValid())
         {
-            await AnimateRankSlider();
-            
+            await UniTask.WhenAll(
+                AnimateRankSlider(),
+                AnimateCoinValue()
+            );
         }
     }
 
+    private async UniTask AnimateCoinValue()
+    {
+        if (!IsUIValid() || coinText == null) return;
+
+        int[] values = { 2, 4, 6, 8, 10 };
+        float stepDelay = 0.05f; // 각 단계 사이의 딜레이
+
+        foreach (int value in values)
+        {
+            coinText.text = value.ToString();
+            await UniTask.Delay(TimeSpan.FromSeconds(stepDelay));
+        }
+    }
+
+    // ... (나머지 기존 메서드들은 그대로 유지)
     private void SetupTopUI()
     {
         topUIOriginalPosition = topUI.anchoredPosition;
