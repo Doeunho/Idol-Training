@@ -9,9 +9,9 @@ using System.Linq;
 public class RandomAnimationList : MonoBehaviour
 {
     [SerializeField] private Animator characterAnimator;
-    [SerializeField] private List<TrainingData> selectedExercises = new();  // SerializeField 추가 및 초기화
+    [SerializeField] private List<TrainingData> selectedExercises = new();
     private CancellationTokenSource cts;
-    private const string TRAINING_DATA_PATH = "Training";
+    private const string TRAINING_DATA_PATH = "Training";  // Resources 내의 경로
 
     private void Awake()
     {
@@ -49,10 +49,9 @@ public class RandomAnimationList : MonoBehaviour
                 cts.Dispose();
             }
 
-            cts = new CancellationTokenSource();
+            await UniTask.Delay(9000, cancellationToken: cts.Token);
 
             SelectRandomExercises();
-
             foreach (var exercise in selectedExercises)
             {
                 await PlayExercise(exercise, cts.Token);
@@ -70,11 +69,12 @@ public class RandomAnimationList : MonoBehaviour
         }
     }
 
-    [ContextMenu("랜덤 운동 선택")] // 인스펙터에서 테스트할 수 있도록 컨텍스트 메뉴 추가
+    [ContextMenu("랜덤 운동 선택")]
     private void SelectRandomExercises()
     {
         selectedExercises.Clear();
 
+        // Resources 폴더에서 모든 TrainingData 에셋 로드
         TrainingData[] allExercises = Resources.LoadAll<TrainingData>(TRAINING_DATA_PATH);
 
         if (allExercises == null || allExercises.Length == 0)
