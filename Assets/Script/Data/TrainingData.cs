@@ -7,11 +7,12 @@ using UnityEngine.UI;
 [CreateAssetMenu(menuName = "Training Data")]
 public class TrainingData : ScriptableObject
 {
-    [SerializeField] private string trainingName;
-    [SerializeField] private RuntimeAnimatorController trainingController;
     [SerializeField] private Sprite trainingIcon;
     [SerializeField] private ExerciseType exerciseType;
     [SerializeField] private string exerciseName;
+
+    public string trainingName;
+    public RuntimeAnimatorController trainingController;
 
     public enum ExerciseType
     {
