@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(menuName = "Training Data")]
+[CreateAssetMenu(menuName = "TrainingData")]
 public class TrainingData : ScriptableObject
 {
-    [SerializeField] private Sprite trainingIcon;
-    [SerializeField] private ExerciseType exerciseType;
-    [SerializeField] private string exerciseName;
+    public Sprite trainingIcon;
+    public ExerciseType exerciseType;
+    public string exerciseName;
+    public CameraHeight cameraHeight;
 
     public string trainingName;
     public RuntimeAnimatorController trainingController;
@@ -20,5 +21,11 @@ public class TrainingData : ScriptableObject
         Arm,
         Leg,
         Wholebody
+    }
+
+    public enum CameraHeight
+    {
+        Up,
+        Down
     }
 }

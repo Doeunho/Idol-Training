@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public int coin;
     public int exp;
     public int rank;
-    public int[] nextexp = { 200 };
+    public int[] nextexp = { 50, 50, 50, 100, 100, 100, 200, 200, 200, 300 };
 
 
     //게임 시작, 종료 코루틴 만들기
