@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 public class TrainingListUIController : MonoBehaviour
 {
     [Header("UI References")]
@@ -12,12 +13,37 @@ public class TrainingListUIController : MonoBehaviour
     [SerializeField] private Transform parentTransform;
     [SerializeField] private string setParentPath = "TrainingIcon";
     [SerializeField] private TrainingDataManager trainingDataManager;
+    [SerializeField] private MusicManager musicManager;
 
-    public void SpawnObjects()
+
+    public async void OnSpawnButtonClick()
     {
+        await SpawnObjects();
+    }
+
+
+    public async UniTask SpawnObjects()
+    {
+        // 기존 UI 오브젝트들 제거
         foreach (Transform child in parentTransform)
         {
             Destroy(child.gameObject);
+        }
+
+        if (parentTransform.parent.GetComponent<ScrollRect>() is ScrollRect scrollRect)
+        {
+            scrollRect.horizontalNormalizedPosition = 0f;
+        }
+
+        // MusicManager 컴포넌트 확인 및 생성
+        if (musicManager == null)
+        {
+            musicManager = GetComponent<MusicManager>();
+            if (musicManager == null)
+            {
+                Debug.Log("MusicManager를 찾을 수 없어 새로 생성합니다.");
+                musicManager = gameObject.AddComponent<MusicManager>();
+            }
         }
 
         trainingDataManager.LoadAndSelectRandomExercises();
@@ -30,29 +56,24 @@ public class TrainingListUIController : MonoBehaviour
         var exerciseSets = trainingDataManager.GetExerciseSets();
 
         // 5개의 메인 프로그램 UI 생성
-        // 1. Stretch 1
+        // 1. Stretch 1 생성
         CreateProgramUI(0, allExercises[0], "STRETCH 1");
 
-        // 2-4. 세트 1-3
+        // 2-4. 세트 1-3 생성
         for (int i = 0; i < 3; i++)
         {
             string setDescription = $"SET {i + 1} ({exerciseSets[i].Count} Exercises)";
             CreateProgramUI(i + 1, exerciseSets[i][0], setDescription);
         }
 
-        // 5. Stretch 2
+        // 5. Stretch 2 생성
         CreateProgramUI(4, allExercises[allExercises.Count - 1], "STRETCH 2");
 
-        // Stretch 1 UI 생성
+        // 상세 UI 생성
         CreateStretchUI(0, allExercises[0]);
-
-        // 세트별 상세 UI 생성
         CreateSetDetails(exerciseSets);
-
-        // Stretch 2 UI 생성
         CreateStretchUI(4, allExercises[allExercises.Count - 1]);
     }
-
 
     private void CreateProgramUI(int index, TrainingData exercise, string description)
     {
@@ -72,14 +93,14 @@ public class TrainingListUIController : MonoBehaviour
             }
         }
 
-        // 음악 데이터 할당
-        bool isStretch = (index == 0 || index == 4); // Stretch 1 또는 Stretch 2
-        GetComponent<MusicManager>().AssignMusicToProgram(mainProgramUI, isStretch);
+        // 스트레치 운동 여부 확인 및 음악 할당
+        bool isStretch = (index == 0 || index == 4);
+        musicManager.AssignMusicToProgram(mainProgramUI, isStretch);
 
         // 트레이닝 아이콘 업데이트
         UpdateTrainingIcons(mainProgramUI.transform.Find("TrainingIcon"), exercise);
 
-        // UI 위치 조정 (필요한 경우)
+        // UI 위치 조정
         RectTransform rectTransform = mainProgramUI.GetComponent<RectTransform>();
         if (rectTransform != null)
         {
@@ -94,7 +115,7 @@ public class TrainingListUIController : MonoBehaviour
 
         if (setParentTransform != null)
         {
-            // 기존의 모든 자식 오브젝트들을 제거
+            // 기존 자식 오브젝트들 제거
             foreach (Transform child in setParentTransform)
             {
                 Destroy(child.gameObject);
@@ -102,7 +123,7 @@ public class TrainingListUIController : MonoBehaviour
 
             GameObject newSetObject = Instantiate(setUI, setParentTransform);
 
-            // Img - Icon 찾아서 이미지 업데이트
+            // 아이콘 이미지 업데이트
             Transform imgIcon = newSetObject.transform.Find("Img - Icon");
             if (imgIcon != null)
             {
@@ -141,38 +162,33 @@ public class TrainingListUIController : MonoBehaviour
         for (int setIndex = 0; setIndex < exerciseSets.Count; setIndex++)
         {
             var setExercises = exerciseSets[setIndex];
-
             Transform programUITransform = parentTransform.GetChild(setIndex + 1);
             Transform setParentTransform = programUITransform.Find(setParentPath);
 
             if (setParentTransform != null)
             {
-                // 기존의 모든 자식 오브젝트들을 제거
+                // 기존 자식 오브젝트들 제거
                 foreach (Transform child in setParentTransform)
                 {
                     Destroy(child.gameObject);
                 }
 
-                // exerciseType별로 중복 체크를 위한 HashSet 생성
+                // exerciseType별 중복 체크를 위한 HashSet
                 HashSet<TrainingData.ExerciseType> addedExerciseTypes = new HashSet<TrainingData.ExerciseType>();
 
-                // 새로운 SET UI 생성
+                // 세트별 운동 UI 생성
                 for (int exerciseIndex = 0; exerciseIndex < setExercises.Count; exerciseIndex++)
                 {
                     TrainingData exercise = setExercises[exerciseIndex];
 
-                    // 이미 해당 exerciseType이 추가되었다면 스킵
+                    // 이미 추가된 운동 타입이면 스킵
                     if (addedExerciseTypes.Contains(exercise.exerciseType))
-                    {
                         continue;
-                    }
 
-                    // 새로운 exerciseType이면 HashSet에 추가
                     addedExerciseTypes.Add(exercise.exerciseType);
-
                     GameObject newSetObject = Instantiate(setUI, setParentTransform);
 
-                    // Img - Icon 찾아서 이미지 업데이트
+                    // 아이콘 이미지 업데이트
                     Transform imgIcon = newSetObject.transform.Find("Img - Icon");
                     if (imgIcon != null)
                     {
@@ -197,11 +213,10 @@ public class TrainingListUIController : MonoBehaviour
                         exerciseNameText.text = exercise.exerciseName;
                     }
 
-                    // UI 위치 조정
+                    // UI 위치 조정 (가로 방향 간격 유지)
                     RectTransform setRect = newSetObject.GetComponent<RectTransform>();
                     if (setRect != null)
                     {
-                        // addedExerciseTypes.Count - 1을 사용하여 간격을 유지
                         float xOffset = (addedExerciseTypes.Count - 1) * (setRect.rect.width + 10);
                         setRect.anchoredPosition = new Vector2(xOffset, 0);
                     }
@@ -214,10 +229,9 @@ public class TrainingListUIController : MonoBehaviour
     {
         if (trainingIconRoot == null || exerciseData == null) return;
 
-        // 각 TraIcon에서 직접 Img - Icon 찾기
         foreach (Transform traIcon in trainingIconRoot)
         {
-            // Img - Icon을 직접 찾아서 이미지 변경
+            // 아이콘 이미지 업데이트
             Transform imgIcon = traIcon.Find("Img - Icon");
             if (imgIcon != null)
             {
@@ -228,7 +242,7 @@ public class TrainingListUIController : MonoBehaviour
                 }
             }
 
-            // Text - IconName 업데이트
+            // 아이콘 이름 텍스트 업데이트
             Transform textIconName = traIcon.Find("Text - IconName");
             if (textIconName != null)
             {

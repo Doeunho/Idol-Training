@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopMusicUI : MonoBehaviour
+public class CharacterUI : MonoBehaviour
 {
-    public MusicData musicData;
+    public CharacterData characterData;
     Image icon;
     Text textName;
     void Awake()
@@ -14,24 +14,24 @@ public class ShopMusicUI : MonoBehaviour
         Image[] images = GetComponentsInChildren<Image>();
         icon = images[2];  // 중간 이미지를 위해 인덱스 조정
 
-        if (musicData != null)
+        if (characterData != null)
         {
-            icon.sprite = musicData.Img_MusicImg;
+            icon.sprite = characterData.Spt_CharacterSprite;
         }
 
         // Text 컴포넌트 찾기
         textName = GetComponentsInChildren<Text>()[0];
-        if (textName != null && musicData != null)
+        if (textName != null && characterData != null)
         {
-            textName.text = musicData.Text_MusicName;
+            textName.text = characterData.CharacterName;
         }
     }
 
     private void OnEnable()
     {
-        if (textName != null && musicData != null)
+        if (textName != null && characterData != null)
         {
-            textName.text = musicData.Text_MusicName;
+            textName.text = characterData.CharacterName;
         }
     }
 }
