@@ -66,13 +66,25 @@ public class TrainingListUIController : MonoBehaviour
             {
                 text.text = (index + 1).ToString("D2");
             }
-            //else if (text.gameObject.name == "Text - Instructor")
-            //{
-            //    text.text = $"PROGRAM.{(index + 1).ToString("D2")}";
-            //}
+            else if (text.gameObject.name == "Text - Instructor")
+            {
+                text.text = $"PROGRAM.{(index + 1).ToString("D2")}";
+            }
         }
 
+        // 음악 데이터 할당
+        bool isStretch = (index == 0 || index == 4); // Stretch 1 또는 Stretch 2
+        GetComponent<MusicManager>().AssignMusicToProgram(mainProgramUI, isStretch);
+
+        // 트레이닝 아이콘 업데이트
         UpdateTrainingIcons(mainProgramUI.transform.Find("TrainingIcon"), exercise);
+
+        // UI 위치 조정 (필요한 경우)
+        RectTransform rectTransform = mainProgramUI.GetComponent<RectTransform>();
+        if (rectTransform != null)
+        {
+            rectTransform.anchoredPosition = new Vector2(0, -index * (rectTransform.rect.height + 10));
+        }
     }
 
     private void CreateStretchUI(int index, TrainingData exercise)

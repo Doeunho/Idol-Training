@@ -517,6 +517,7 @@ GameObject:
   - component: {fileID: 3402346519080729530}
   - component: {fileID: 4993159371590969946}
   - component: {fileID: 5310464903390164758}
+  - component: {fileID: 241220206447436098}
   m_Layer: 5
   m_Name: Training List
   m_TagString: Untagged
@@ -601,6 +602,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.49019608}
   m_EffectDistance: {x: 29.91, y: -24.28}
   m_UseGraphicAlpha: 1
+--- !u!114 &241220206447436098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3298320204600981860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df3417ce5ae63ac428312df9fd17b05f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicData: {fileID: 0}
 --- !u!1 &4733548080644334853
 GameObject:
   m_ObjectHideFlags: 0
