@@ -455,6 +455,7 @@ GameObject:
   - component: {fileID: 440904152370194466}
   - component: {fileID: 7898323830563774833}
   - component: {fileID: 7157234359302216815}
+  - component: {fileID: 6746593442790741260}
   m_Layer: 5
   m_Name: ShopCharacterUI
   m_TagString: Untagged
@@ -563,3 +564,16 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &6746593442790741260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7831332705812456446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e08ca7d3e1c9d4bb0b4986d7288309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: 92bfe1bfb1342ce4da1e73efea939f5e, type: 2}

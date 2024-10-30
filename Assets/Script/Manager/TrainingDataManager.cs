@@ -11,8 +11,8 @@ public class TrainingDataManager : MonoBehaviour
     [SerializeField] private string stretch2Name = "Stretch 2";
 
     private List<TrainingData> availableTrainings = new List<TrainingData>();
-    private List<List<TrainingData>> exerciseSets = new List<List<TrainingData>>();  // 3세트
-    private List<TrainingData> allExercisesInOrder = new List<TrainingData>();  // UI 표시 및 재생 순서
+    private List<List<TrainingData>> exerciseSets = new List<List<TrainingData>>();
+    private List<TrainingData> allExercisesInOrder = new List<TrainingData>(); 
 
     private bool IsPairExercise(string trainingName)
     {
