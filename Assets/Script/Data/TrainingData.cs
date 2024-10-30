@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class TrainingData : ScriptableObject
 {
     public Sprite trainingIcon;
-    public ExerciseType exerciseType;
     public string exerciseName;
+    public ExerciseType exerciseType;
     public CameraHeight cameraHeight;
 
     public string trainingName;
@@ -20,7 +20,8 @@ public class TrainingData : ScriptableObject
         Abdomen,
         Arm,
         Leg,
-        Wholebody
+        Wholebody,
+        Strech
     }
 
     public enum CameraHeight

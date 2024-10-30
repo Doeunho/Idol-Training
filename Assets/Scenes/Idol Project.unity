@@ -2442,8 +2442,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trainingDataPath: Training
-  exercisesPerSet: 3
-  totalSets: 3
+  stretch1Name: Stretch 1
+  stretch2Name: Stretch 2
 --- !u!4 &369823998
 Transform:
   m_ObjectHideFlags: 0
@@ -7875,6 +7875,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7526845117846222824, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526845117846222824, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 26448338b6222e5428371d99b74e1a1b, type: 2}
     - target: {fileID: 7612004458383099412, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
       propertyPath: m_CastShadows
       value: 1
@@ -10984,7 +10992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1400322352612939662, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4614583065956342526, guid: afabd1c958c101548b7330dd8ed0927a, type: 3}
       propertyPath: m_IsActive
@@ -12576,8 +12584,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   programUI: {fileID: 3298320204600981860, guid: 03d3a08b49c1a0f4781670a7195651d8, type: 3}
+  setUI: {fileID: 3399224814825607320, guid: 5bdeb6a5c9dbc914fa3df31b69a472de, type: 3}
   parentTransform: {fileID: 428802322}
-  trainingDataManager: {fileID: 0}
+  setParentPath: TrainingIcon
+  trainingDataManager: {fileID: 369823997}
 --- !u!1 &1884613813
 GameObject:
   m_ObjectHideFlags: 0
@@ -23006,9 +23016,9 @@ SceneRoots:
   - {fileID: 2122033099}
   - {fileID: 1851026527}
   - {fileID: 27313294}
-  - {fileID: 77919386}
   - {fileID: 1633006007}
   - {fileID: 1856979090}
+  - {fileID: 77919386}
   - {fileID: 1437806466}
   - {fileID: 369823998}
   - {fileID: 2055716932}

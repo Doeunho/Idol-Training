@@ -5,7 +5,7 @@ using UnityEngine.UI;
 [CreateAssetMenu(menuName = "MusicData")]
 public class MusicData : ScriptableObject
 {
-    public enum MusicName { WaitforYou, PixelWorld, Why, SixSummer, Loveme, OurMovie, IJustLoveYa, MerryPLLIstmas, WayForLuv }
+    public enum MusicName { WaitforYou, PixelWorld, Why, SixSummer, Loveme, OurMovie, IJustLoveYa, MerryPLLIstmas, WayForLuv, PumpUpTheVolume }
 
     public MusicName musicName;
     public AudioClip Music;
