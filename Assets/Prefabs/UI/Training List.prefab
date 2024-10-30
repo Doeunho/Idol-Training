@@ -321,8 +321,8 @@ GameObject:
   - component: {fileID: 7744851518939606573}
   - component: {fileID: 2346694646141746458}
   - component: {fileID: 6463841225999293188}
-  - component: {fileID: 692708510374210748}
   - component: {fileID: 1352088133466952779}
+  - component: {fileID: 1220013082481595881}
   m_Layer: 5
   m_Name: Img - Training List
   m_TagString: Untagged
@@ -391,19 +391,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &692708510374210748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3153763281889542103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df3417ce5ae63ac428312df9fd17b05f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _musicData: {fileID: 11400000, guid: 8563e60def1e0464b8373cc3c2afbf48, type: 2}
 --- !u!114 &1352088133466952779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,6 +417,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1220013082481595881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3153763281889542103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df3417ce5ae63ac428312df9fd17b05f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicData: {fileID: 0}
 --- !u!1 &3285549338442522043
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,7 +517,6 @@ GameObject:
   - component: {fileID: 3402346519080729530}
   - component: {fileID: 4993159371590969946}
   - component: {fileID: 5310464903390164758}
-  - component: {fileID: 241220206447436098}
   m_Layer: 5
   m_Name: Training List
   m_TagString: Untagged
@@ -602,19 +601,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.49019608}
   m_EffectDistance: {x: 29.91, y: -24.28}
   m_UseGraphicAlpha: 1
---- !u!114 &241220206447436098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3298320204600981860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df3417ce5ae63ac428312df9fd17b05f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _musicData: {fileID: 0}
 --- !u!1 &4733548080644334853
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,6 +919,7 @@ GameObject:
   - component: {fileID: 5304026067505735611}
   - component: {fileID: 3314176853458652584}
   - component: {fileID: 7911138320042330846}
+  - component: {fileID: 497948306659517451}
   m_Layer: 5
   m_Name: Btn - MusicPlay
   m_TagString: Untagged
@@ -1042,9 +1029,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2536150678325190647, guid: 64a0e49b3ca61c245a61c698ce914c01, type: 3}
         m_TargetAssemblyTypeName: ButtonClickAudio, Assembly-CSharp
-        m_MethodName: ButtonClick_AudioPlay
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1081,6 +1068,18 @@ MonoBehaviour:
   m_EffectColor: {r: 0.05158348, g: 0, b: 0.3301887, a: 1}
   m_EffectDistance: {x: 3.73, y: -5.12}
   m_UseGraphicAlpha: 1
+--- !u!114 &497948306659517451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7700529353935876024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e151f6ef0b79044babb9555d18f3857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9063707303861878507
 GameObject:
   m_ObjectHideFlags: 0

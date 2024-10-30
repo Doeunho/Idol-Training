@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{27924509-E807-D463-794F-E908E0826898}</ProjectGuid>
+    <ProjectGuid>{BFFF2A05-DB02-7D5B-96AC-28EC218B02B2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -109,6 +109,7 @@
     <Compile Include="Assets\Script\Data\CharacterData.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Script\UI\UI_RewarePopup.cs" />
+    <Compile Include="Assets\AudioButton.cs" />
     <Compile Include="Assets\Script\UI\UI_ButtonEffect.cs" />
     <Compile Include="Assets\Script\UI\UI_TrainingRoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
@@ -1285,15 +1286,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{370611F5-C32B-D32F-1419-F0F392D602F6}</Project>
+      <Project>{D315795B-785A-F698-B15F-0991A8DEAB19}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="FUnit.csproj">
-      <Project>{AC19EF4D-E9D3-D0A3-43FB-38AD9E5ABF2F}</Project>
+      <Project>{DB652F8D-EB9B-B859-91FA-B3AA39E4DFFE}</Project>
       <Name>FUnit</Name>
     </ProjectReference>
     <ProjectReference Include="BOYS2.Live.csproj">
-      <Project>{934B82C0-D599-492A-7504-182369E26E5D}</Project>
+      <Project>{9866367F-A2AD-4864-DB62-BFC3F6A50AA4}</Project>
       <Name>BOYS2.Live</Name>
     </ProjectReference>
   </ItemGroup>

@@ -1,49 +1,69 @@
 using UnityEngine;
 using System.Collections;
+using Cysharp.Threading.Tasks;
 
 public class AudioFadeOut : MonoBehaviour
 {
-    public AudioSource audioSource;    // 오디오 소스 컴포넌트
-    public float timerDuration = 10.0f;  // 타이머 지속 시간 (초)
-    public float fadeOutDuration = 5.0f; // 페이드 아웃 지속 시간 (초)
+    public AudioSource audioSource;
+    public float timerDuration = 10.0f;
+    public float fadeOutDuration = 5.0f;
+    private float timeRemaining;
+    private bool isFading = false;
 
-    private float timeRemaining; // 타이머 남은 시간
+    // 페이드 아웃 완료 이벤트
+    public event System.Action OnFadeOutComplete;
 
-    void Start()
+    public async UniTaskVoid StartTimer()
     {
-        if (audioSource == null)
+        if (isFading)
         {
-            Debug.LogError("AudioSource 컴포넌트가 할당되지 않았습니다.");
+            Debug.Log("이미 페이드 중입니다.");
             return;
         }
 
         timeRemaining = timerDuration;
-        StartCoroutine(TimerCountdown());
-    }
-
-    IEnumerator TimerCountdown()
-    {
         while (timeRemaining > 0)
         {
             timeRemaining -= Time.deltaTime;
-            yield return null;
+            await UniTask.Yield();
         }
 
-        // 타이머가 끝나면 페이드 아웃 시작
-        StartCoroutine(FadeOutAudio());
+        FadeOutAudio().Forget();
     }
 
-    IEnumerator FadeOutAudio()
+    private async UniTaskVoid FadeOutAudio()
     {
-        float startVolume = audioSource.volume;
+        if (audioSource == null || !audioSource.isPlaying || isFading) return;
 
-        while (audioSource.volume > 0)
+        try
         {
-            audioSource.volume -= startVolume * Time.deltaTime / fadeOutDuration;
-            yield return null;
-        }
+            isFading = true;
+            float startVolume = audioSource.volume;
+            float elapsedTime = 0;
 
-        audioSource.Stop(); // 오디오 재생 정지
-        audioSource.volume = startVolume; // 다음 재생을 위해 볼륨 복원
+            while (elapsedTime < fadeOutDuration)
+            {
+                elapsedTime += Time.deltaTime;
+                audioSource.volume = Mathf.Lerp(startVolume, 0, elapsedTime / fadeOutDuration);
+                await UniTask.Yield();
+            }
+
+            audioSource.Stop();
+            audioSource.volume = startVolume;
+            Destroy(audioSource);
+
+            // 페이드 아웃 완료 이벤트 발생
+            OnFadeOutComplete?.Invoke();
+        }
+        finally
+        {
+            isFading = false;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        // 컴포넌트가 제거될 때 이벤트 리스너 제거
+        OnFadeOutComplete = null;
     }
 }
